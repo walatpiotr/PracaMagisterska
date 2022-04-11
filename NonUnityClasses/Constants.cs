@@ -14,6 +14,12 @@
             Init
         }
 
+        public enum DelayType
+        {
+            Slow,
+            Fast
+        }
+
         public const float acceleration = 1.0f;
         public const float breaking = 2.0f;
 
