@@ -5,11 +5,13 @@
         public enum CarStates
         {
             Breaking,
-            WaitingForGreen,
+            WaitingForGreenFirst,
+            WaitingForGreenSecond,
             Stop,
             Accelerating,
             FollowingPath,
-            FollowingNextCar
+            FollowingNextCar,
+            Init
         }
 
         public const float acceleration = 1.0f;

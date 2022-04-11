@@ -1,24 +1,29 @@
 using System;
 using UnityEngine;
+using static NonUnityClasses.Constants;
 
 namespace Assets.Scripts
 {
     public class CarBehaviourBase : MonoBehaviour
     {
+        protected float velocity = 0f;
+
+        protected CarStates currentState = CarStates.Init;
+
         // Method responsible for increasing speed
-        private void Accelerate()
+        protected void Accelerate()
         {
 
         }
 
         // Method responsible for decreasing speed
-        private void Breake()
+        protected void Break()
         {
 
         }
 
         // Method responsible for detecting car from the same line
-        private Tuple<GameObject, float> DetectCarAheadWithDistance()
+        protected Tuple<GameObject, float> DetectCarAheadWithDistance()
         {
             return null;
         }
