@@ -1,4 +1,4 @@
-﻿using static NonUnityClasses.Constants;
+﻿using static Assets.CSharpClasses.Constans;
 
 namespace Assets.Scripts
 {
