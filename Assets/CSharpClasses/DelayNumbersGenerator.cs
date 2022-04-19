@@ -1,4 +1,5 @@
 ﻿using System;
+using static Assets.CSharpClasses.Constans;
 
 namespace Assets.CSharpClasses
 {
