@@ -5,17 +5,14 @@ namespace Assets.CSharpClasses
 {
     public class DelayNumbersGenerator
     {
+        float firstTreshold = ffchance;
+        float secondTreshold = ffchance + fschance;
+        float thirdTreshold = ffchance + fschance + sschance;
+        float forthTreshold = ffchance + fschance + sschance + sfchance;
+
         public Tuple<Tuple<float, DelayType>, Tuple<float, DelayType>> GenerateDelayTimes()
         {
             return GenerateTimesBySituation(GenerateSituation());
-        }
-
-        private Tuple<DelayType, DelayType> GenerateSituation()
-        {
-            // TODO
-            // generate one out of four possible situations:
-            // slow-slow ; slow-fast ; fast-slow ; fast-fast
-            return null;
         }
 
         private Tuple<Tuple<float, DelayType>, Tuple<float, DelayType>> GenerateTimesBySituation(Tuple<DelayType, DelayType> generatedSituation)
@@ -26,6 +23,32 @@ namespace Assets.CSharpClasses
             return new Tuple<Tuple<float, DelayType>, Tuple<float, DelayType>>(
                 new Tuple<float, DelayType>(timeFirst, generatedSituation.Item1),
                 new Tuple<float, DelayType>(timeSecond, generatedSituation.Item2));
+        }
+
+        private Tuple<DelayType, DelayType> GenerateSituation()
+        {
+            float randomNumber = UnityEngine.Random.Range(0.0f, 100.0f);
+
+            if (randomNumber < firstTreshold)
+            {
+                return new Tuple<DelayType, DelayType>(DelayType.Fast, DelayType.Fast);
+            }
+            else if (randomNumber < secondTreshold)
+            {
+                return new Tuple<DelayType, DelayType>(DelayType.Fast, DelayType.Slow);
+            }
+            else if (randomNumber < thirdTreshold)
+            {
+                return new Tuple<DelayType, DelayType>(DelayType.Slow, DelayType.Slow);
+            }
+            else if (randomNumber < forthTreshold)
+            {
+                return new Tuple<DelayType, DelayType>(DelayType.Slow, DelayType.Fast);
+            }
+            else
+            {
+                return null;
+            }
         }
 
         private float GenerateTimeForFirstCar(DelayType delayType)
