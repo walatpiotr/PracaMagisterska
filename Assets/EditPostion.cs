@@ -47,6 +47,10 @@ public class EditPostion : MonoBehaviour
         {
             this.transform.position += new Vector3(0.01f, 0f, 0f);
         }
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnMouseDown()
