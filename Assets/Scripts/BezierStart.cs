@@ -42,7 +42,11 @@ public class BezierStart : MonoBehaviour
             instance.GetComponent<Bezier>().point0 = GameObject.FindGameObjectWithTag("bezierManager").GetComponent<BezierContainer>().bezier.GetComponent<BezierTemp>().point0;
             instance.GetComponent<Bezier>().point1 = pointer;
             //TODO - average Vectors3
-            instance.GetComponent<Bezier>().point2 = new Vector3(0f,0f,0f);
+            var xRand = UnityEngine.Random.Range(0f, 2.5f);
+            var yRand = UnityEngine.Random.Range(0f, 2.5f);
+            var xAverage = (instance.GetComponent<Bezier>().point1.x + instance.GetComponent<Bezier>().point0.x) / 2;
+            var yAverage = (instance.GetComponent<Bezier>().point1.y + instance.GetComponent<Bezier>().point0.y) / 2;
+            instance.GetComponent<Bezier>().point2 = new Vector3(xAverage+xRand, yAverage+yRand, 0f);
 
         }
 

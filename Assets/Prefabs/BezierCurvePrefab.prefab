@@ -146,3 +146,16 @@ MonoBehaviour:
   point0: {x: 0, y: 0, z: 0}
   point1: {x: 0, y: 0, z: 0}
   point2: {x: 0, y: 0, z: 0}
+  middlePointPrefab: {fileID: 2875066018852077094, guid: b4dfffabed47f0a4a9ae3d6132f191ca, type: 3}
+  instantiatedPrefab: {fileID: 0}
+  positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
