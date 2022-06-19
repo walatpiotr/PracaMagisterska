@@ -6,6 +6,9 @@ TagManager:
   tags:
   - bezierSimple
   - bezierManager
+  - canvaRoads
+  - road
+  - panelRoads
   layers:
   - Default
   - TransparentFX
