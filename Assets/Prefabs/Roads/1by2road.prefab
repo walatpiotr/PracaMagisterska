@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5027479517458280348}
   - component: {fileID: 3075382765290736783}
   - component: {fileID: 3658697855064644180}
-  - component: {fileID: -3032815957982876616}
   - component: {fileID: 2627435976500397232}
+  - component: {fileID: 8315995342189543083}
   m_Layer: 0
   m_Name: 1by2road
   m_TagString: road
@@ -129,19 +129,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-3032815957982876616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732644066566727449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2458243863b71e6448906db392d7deb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  editMode: 0
 --- !u!61 &2627435976500397232
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -168,3 +155,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.37, y: 3.54}
   m_EdgeRadius: 0
+--- !u!114 &8315995342189543083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732644066566727449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 169e38df12966bc4f96c3b15681ede61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editMode: 0

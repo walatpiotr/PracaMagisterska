@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 765226463fdf9ba4a85f6ec8f9e6cb0b, type: 3}
+    - target: {fileID: 5894595417214241191, guid: c222006f7d9b99344888a55ef9e036f1, type: 3}
+      propertyPath: prefabImage
+      value: 
+      objectReference: {fileID: 2188545876496386356, guid: d71f57cef70e1d446becd9ae622f91b7, type: 3}
     - target: {fileID: 7929155037939942718, guid: c222006f7d9b99344888a55ef9e036f1, type: 3}
       propertyPath: m_text
       value: 2 by 3 road
