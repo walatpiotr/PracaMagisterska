@@ -5,8 +5,8 @@ namespace Assets.Scripts
     public class BezierTemp : MonoBehaviour
     {
         public LineRenderer lineRenderer;
-        public Vector3 point0;
-        public Vector3 point1;
+        public GameObject end;
+        public Vector2 point1;
 
         public int numOfPoints = 50;
         public Vector3[] positions = new Vector3[50];
@@ -33,7 +33,7 @@ namespace Assets.Scripts
             for (int i = 1; i < numOfPoints + 1; i++)
             {
                 float t = i / numOfPoints;
-                positions[i - 1] = CalculateLinearBezierPoint(t, point0, point1).AddLayer();
+                positions[i - 1] = CalculateLinearBezierPoint(t, end.transform.position, point1).AddLayer();
             }
 
             lineRenderer.SetPositions(positions);
@@ -41,7 +41,6 @@ namespace Assets.Scripts
         }
         private void CleanUpVectors()
         {
-            point0 = VectorExtensions.XZPlane(point0);
             point1 = VectorExtensions.XZPlane(point1);
         }
     }

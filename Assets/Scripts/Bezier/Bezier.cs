@@ -5,7 +5,9 @@ namespace Assets.Scripts
     public class Bezier: MonoBehaviour
     {
         public LineRenderer lineRenderer;
-        public Vector3 point0, point1, point2;
+        public GameObject start;
+        public GameObject end;
+        public Vector3 point2;
 
         public GameObject middlePointPrefab;
         public GameObject instantiatedPrefab;
@@ -23,9 +25,9 @@ namespace Assets.Scripts
 
         void Update()
         {
-            Debug.DrawLine(point0, point1, Color.white, 2.5f);
-            Debug.DrawLine(point2, point0, Color.white, 2.5f);
-            Debug.DrawLine(point2, point1, Color.white, 2.5f);
+            Debug.DrawLine(end.transform.position, start.transform.position, Color.white, 2.5f);
+            Debug.DrawLine(end.transform.position, start.transform.position, Color.white, 2.5f);
+            Debug.DrawLine(end.transform.position, start.transform.position, Color.white, 2.5f);
             DrawLineCurve();
             UpdatePoint2ToPrefabPoint();
         }
@@ -40,9 +42,9 @@ namespace Assets.Scripts
             float u = 1-t;
             float tt = t * t;
             float uu = u * u;
-            Vector3 p = uu * point0;
+            Vector3 p = uu * end.transform.position;
             p += 2 * u * t * point2;
-            p += tt * point1;
+            p += tt * start.transform.position;
             return p;
         }
 
@@ -51,7 +53,7 @@ namespace Assets.Scripts
             for(int i=1; i< numOfPoints+1; i++)
             {
                 float t = i / (float)numOfPoints;
-                positions[i - 1] = CalculateQuadraticBezierPoint(t, point0, point1, point2);
+                positions[i - 1] = CalculateQuadraticBezierPoint(t, end.transform.position, start.transform.position, point2);
             }
             lineRenderer.SetPositions(positions);
 
@@ -59,8 +61,6 @@ namespace Assets.Scripts
 
         private void CleanUpVectors()
         {
-            point0 = VectorExtensions.XZPlane(point0);
-            point1 = VectorExtensions.XZPlane(point1);
             point2 = VectorExtensions.XZPlane(point2);
         }
 
