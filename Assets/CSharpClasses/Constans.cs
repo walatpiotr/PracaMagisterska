@@ -18,6 +18,15 @@
         public const float acceleration = 1.0f;
         public const float breaking = 2.0f;
 
+        // Paths
+
+        public enum NodeType
+        {
+            End,
+            Start,
+            Generator
+        }
+        
         // Delays
         public enum DelayType
         {

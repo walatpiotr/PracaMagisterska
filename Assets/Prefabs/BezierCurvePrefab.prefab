@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 130131562736468689}
   - component: {fileID: 5368624305839727447}
-  - component: {fileID: 6424488267928789044}
+  - component: {fileID: 7502018718793786591}
   m_Layer: 0
   m_Name: BezierCurvePrefab
   m_TagString: Untagged
@@ -130,7 +130,7 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &6424488267928789044
+--- !u!114 &7502018718793786591
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3286701523195168373}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72baca36911bcb499cc5cae5ccef444, type: 3}
+  m_Script: {fileID: 11500000, guid: 823eca61a3509b74abf1be28ade87d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 5368624305839727447}
