@@ -9,6 +9,7 @@ TagManager:
   - canvaRoads
   - road
   - panelRoads
+  - bezierCurve
   layers:
   - Default
   - TransparentFX

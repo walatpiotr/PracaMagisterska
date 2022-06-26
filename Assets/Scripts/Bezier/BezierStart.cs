@@ -1,5 +1,7 @@
 using Assets.Scripts;
+using Assets.Scripts.Pathing;
 using UnityEngine;
+using static Assets.CSharpClasses.Constans;
 
 public class BezierStart : MonoBehaviour
 {
@@ -24,7 +26,7 @@ public class BezierStart : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!GameObject.FindGameObjectWithTag("bezierSimple"))
+        if (!GameObject.FindGameObjectWithTag("bezierSimple") && this.gameObject.GetComponent<Node>().type==NodeType.End)
         {
 
             instance = Instantiate(bezierPrefab, pointer, Quaternion.identity);
@@ -34,7 +36,7 @@ public class BezierStart : MonoBehaviour
             instance.GetComponent<BezierTemp>().point1 = VectorExtensions.XZPlane(pointer);
             Debug.Log("clicked");
         }
-        else
+        if(GameObject.FindGameObjectWithTag("bezierSimple") && this.gameObject.GetComponent<Node>().type == NodeType.Start)
         {
             var bezierTemp = GameObject.FindGameObjectWithTag("bezierSimple");
             var endPoint = bezierTemp.GetComponent<BezierTemp>().end;
