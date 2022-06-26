@@ -24,11 +24,18 @@ namespace Assets.Scripts
         }
 
         void Update()
-        {
-            Debug.DrawLine(end.transform.position, start.transform.position, Color.white, 2.5f);
-            Debug.DrawLine(end.transform.position, start.transform.position, Color.white, 2.5f);
-            Debug.DrawLine(end.transform.position, start.transform.position, Color.white, 2.5f);
-            DrawLineCurve();
+        {            
+            try
+            {
+                Debug.DrawLine(end.transform.position, start.transform.position, Color.white, 2.5f);
+                Debug.DrawLine(end.transform.position, start.transform.position, Color.white, 2.5f);
+                Debug.DrawLine(end.transform.position, start.transform.position, Color.white, 2.5f);
+                DrawLineCurve();
+            }
+            catch
+            {
+                Destroy(this.gameObject);
+            }
             UpdatePoint2ToPrefabPoint();
         }
 
@@ -67,6 +74,7 @@ namespace Assets.Scripts
         private void InstantiateMiddlePointprefab()
         {
             instantiatedPrefab = Instantiate(middlePointPrefab, point2, Quaternion.identity);
+            instantiatedPrefab.transform.parent = gameObject.transform;
         }
 
         private void UpdatePoint2ToPrefabPoint()
