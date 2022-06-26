@@ -42,13 +42,6 @@ public class BezierStart : MonoBehaviour
             instance = Instantiate(bezierTriPrefab, pointer, Quaternion.identity);
             instance.GetComponent<Bezier>().end = endPoint;
             instance.GetComponent<Bezier>().start = this.gameObject;
-            //TODO - average Vectors3
-            var xRand = UnityEngine.Random.Range(0f, 2.5f);
-            var yRand = UnityEngine.Random.Range(0f, 2.5f);
-            var xAverage = (instance.GetComponent<Bezier>().end.transform.position.x + instance.GetComponent<Bezier>().end.transform.position.x) / 2;
-            var yAverage = (instance.GetComponent<Bezier>().start.transform.position.y + instance.GetComponent<Bezier>().start.transform.position.y) / 2;
-            instance.GetComponent<Bezier>().point2 = new Vector3(xAverage+xRand, yAverage+yRand, 0f);
-
         }
 
         
