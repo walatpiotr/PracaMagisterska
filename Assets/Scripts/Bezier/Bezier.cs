@@ -105,5 +105,10 @@ namespace Assets.Scripts
             instantiatedPrefab.GetComponent<SpriteRenderer>().material = new Material(Shader.Find("Sprites/Default"));
             instantiatedPrefab.GetComponent<CurvePointMove>().randomizedColor = randomizedColor;
         }
+
+        public void DestroyBezier()
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

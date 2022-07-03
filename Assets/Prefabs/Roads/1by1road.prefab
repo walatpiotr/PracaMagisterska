@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1714690749960740840, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
+      propertyPath: paths.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1732644066566727449, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
       propertyPath: m_Name
       value: 1by1road
@@ -107,10 +111,42 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1.81
       objectReference: {fileID: 0}
+    - target: {fileID: 4212290601103496158, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212290601103496158, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212290601103496158, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212290601103496158, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212290601103496158, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212290601103496158, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5027479517458280348, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d9a87ebc110b1204ab22acb765a8486f, type: 3}
+    - target: {fileID: 5917975290496683057, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 6878233728832232263, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6899911743321011086, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
       propertyPath: m_RootOrder
       value: 0
