@@ -28,7 +28,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1249392688032028814}
+  - {fileID: 6328867106422147810}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roadId: 
   paths:
-  - {fileID: 8926575265579719110}
---- !u!1001 &752678776671546532
+  - {fileID: 0}
+--- !u!1001 &5543955615335284424
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -104,13 +104,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baed1b3e342664d4b9c8f8ecddef2e13, type: 3}
---- !u!1 &8926575265579719110 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8184058347449840994, guid: baed1b3e342664d4b9c8f8ecddef2e13, type: 3}
-  m_PrefabInstance: {fileID: 752678776671546532}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1249392688032028814 stripped
+--- !u!4 &6328867106422147810 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1955883145578755114, guid: baed1b3e342664d4b9c8f8ecddef2e13, type: 3}
-  m_PrefabInstance: {fileID: 752678776671546532}
+  m_PrefabInstance: {fileID: 5543955615335284424}
   m_PrefabAsset: {fileID: 0}
