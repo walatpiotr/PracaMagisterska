@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4108191771523750884}
   - component: {fileID: 4040220247651027619}
   - component: {fileID: 7686328214424596911}
+  - component: {fileID: 3333004081094870175}
   m_Layer: 0
   m_Name: NodeEndPrefab
   m_TagString: Untagged
@@ -55,7 +56,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061720971419983953}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dac425f97f55c544585c52e31bf94b0c, type: 3}
   m_Name: 
@@ -141,3 +142,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3333004081094870175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061720971419983953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcba0ec03c73a2542b1afef56afd59c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightInputPrefab: {fileID: 778520344570460670, guid: c8d83603c08217845bb1549edc8182bb, type: 3}
+  lightContainerPrefab: {fileID: 2304913605500073946, guid: 5654c88e71c4b4442a9a76a41c56be4c, type: 3}
