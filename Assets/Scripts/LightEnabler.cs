@@ -9,7 +9,12 @@ public class LightEnabler : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (lightInput == null)
+
+        var lightContainer = GameObject.FindGameObjectWithTag("lightContainerTemp");
+        lightContainer.GetComponent<LightParametersContainer>().lightToPopulate = this.gameObject;
+
+        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(0f, 255f, 19f);
+        /*if (lightInput == null)
         {
             Debug.Log("clicked");
             lightInput = Instantiate(lightInputPrefab, transform.position, Quaternion.identity);
@@ -18,7 +23,7 @@ public class LightEnabler : MonoBehaviour
             lightInput.GetComponent<RectTransform>().sizeDelta = lightInputPrefab.GetComponent<RectTransform>().sizeDelta;
             lightInput.GetComponent<RectTransform>().localScale = lightInputPrefab.GetComponent<RectTransform>().localScale;
             lightInput.GetComponent<RectTransform>().anchoredPosition = Camera.main.WorldToScreenPoint(this.transform.position);
-        }
+        }*/
     }
 
     void OnExitButtonClick()

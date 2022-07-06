@@ -23,6 +23,11 @@ public class LightParametersContainer : MonoBehaviour
             lightToPopulate.GetComponent<LightChangerTimer>().greenTime = float.Parse(green.text);
             lightToPopulate.GetComponent<LightChangerTimer>().yellowTime = float.Parse(yellow.text);
             lightToPopulate.GetComponent<LightChangerTimer>().offset = float.Parse(offfset.text);
+            lightToPopulate.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f);
+            green.text = "";
+            yellow.text = "";
+            offfset.text = "";
+
         }
     }
 }
