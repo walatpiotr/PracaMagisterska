@@ -732,6 +732,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrafficLightTimers
       objectReference: {fileID: 0}
+    - target: {fileID: 778520344570460670, guid: c8d83603c08217845bb1549edc8182bb, type: 3}
+      propertyPath: m_TagString
+      value: lightContainerTemp
+      objectReference: {fileID: 0}
     - target: {fileID: 778520344570460671, guid: c8d83603c08217845bb1549edc8182bb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1283,6 +1287,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2304913605500073946, guid: 5654c88e71c4b4442a9a76a41c56be4c, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304913605500073947, guid: 5654c88e71c4b4442a9a76a41c56be4c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304913605500073947, guid: 5654c88e71c4b4442a9a76a41c56be4c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304913605500073947, guid: 5654c88e71c4b4442a9a76a41c56be4c, type: 3}
+      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

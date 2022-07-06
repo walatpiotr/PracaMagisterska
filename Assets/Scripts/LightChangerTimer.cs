@@ -5,15 +5,17 @@ using UnityEngine;
 public class LightChangerTimer : MonoBehaviour
 {
 
-    public float offset;
-    public float greenTime;
-    public float yellowTime;
-    public float redTime;
+    public float offset=0f;
+    public float greenTime=0f;
+    public float yellowTime=0f;
+    public float redTime=0f;
 
     public Sprite redSprite;
     public Sprite yellowRedSprite;
     public Sprite greenSprite;
     public Sprite yellowSprite;
+
+    public bool isValid = false;
 
     public enum State
     {
@@ -34,6 +36,10 @@ public class LightChangerTimer : MonoBehaviour
     
     void Start()
     {
+        if(offset==0f || greenTime == 0f || yellowTime == 0f || redTime == 0f)
+        {
+            isValid = false;
+        }
         states.Add(State.Init, redSprite);
         states.Add(State.Offset, redSprite);
         states.Add(State.Red, redSprite);
@@ -44,45 +50,48 @@ public class LightChangerTimer : MonoBehaviour
 
     void Update()
     {
-        if (timer <= 0f)
+        if (isValid)
         {
-            switch (currentState)
+            if (timer <= 0f)
             {
-                case State.Init:
-                    timer = offset;
-                    currentState = State.Offset;
-                    ChangeSprite();
-                    break;
-                case State.Offset:
-                    timer = yellowTime;
-                    currentState = State.YellowRed;
-                    ChangeSprite();
-                    break;
-                case State.YellowRed:
-                    timer = greenTime;
-                    currentState = State.Green;
-                    ChangeSprite();
-                    break;
-                case State.Green:
-                    timer = yellowTime;
-                    currentState = State.Yellow;
-                    ChangeSprite();
-                    break;
-                case State.Yellow:
-                    timer = redTime;
-                    currentState = State.Red;
-                    ChangeSprite();
-                    break;
-                case State.Red:
-                    timer = yellowTime;
-                    currentState = State.YellowRed;
-                    ChangeSprite();
-                    break;
+                switch (currentState)
+                {
+                    case State.Init:
+                        timer = offset;
+                        currentState = State.Offset;
+                        ChangeSprite();
+                        break;
+                    case State.Offset:
+                        timer = yellowTime;
+                        currentState = State.YellowRed;
+                        ChangeSprite();
+                        break;
+                    case State.YellowRed:
+                        timer = greenTime;
+                        currentState = State.Green;
+                        ChangeSprite();
+                        break;
+                    case State.Green:
+                        timer = yellowTime;
+                        currentState = State.Yellow;
+                        ChangeSprite();
+                        break;
+                    case State.Yellow:
+                        timer = redTime;
+                        currentState = State.Red;
+                        ChangeSprite();
+                        break;
+                    case State.Red:
+                        timer = yellowTime;
+                        currentState = State.YellowRed;
+                        ChangeSprite();
+                        break;
+                }
             }
-        }
-        else
-        {
-            timer -= Time.deltaTime;
+            else
+            {
+                timer -= Time.deltaTime;
+            }
         }
     }
 

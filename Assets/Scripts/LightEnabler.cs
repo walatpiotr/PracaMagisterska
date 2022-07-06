@@ -13,7 +13,7 @@ public class LightEnabler : MonoBehaviour
         var lightContainer = GameObject.FindGameObjectWithTag("lightContainerTemp");
         lightContainer.GetComponent<LightParametersContainer>().lightToPopulate = this.gameObject;
 
-        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(0f, 255f, 19f);
+        this.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
         /*if (lightInput == null)
         {
             Debug.Log("clicked");
