@@ -12,6 +12,9 @@ public class BezierValidator : MonoBehaviour
     public List<Tuple<GameObject, GameObject>> tempBeziers = new List<Tuple<GameObject, GameObject>>();
     public List<GameObject> wrongBeziers = new List<GameObject>();
 
+    public GameObject curvePathPrefab;
+    public GameObject nodeCurvePathPrefab;
+
     public void Validate()
     {
         roads = GameObject.FindGameObjectsWithTag("road").ToList();
@@ -58,7 +61,27 @@ public class BezierValidator : MonoBehaviour
             }
         }
 
-        VisualizeWrongConnections();
+        if (wrongBeziers.Count != 0)
+        {
+            VisualizeWrongConnections();
+        }
+        else
+        {
+            foreach(GameObject bezier in beziers)
+            {
+                var curvePath = Instantiate(curvePathPrefab, bezier.transform.position, Quaternion.identity);
+                foreach (var node in bezier.GetComponent<Bezier>().positions)
+                {
+                    var nodeInstantiated = Instantiate(nodeCurvePathPrefab, node, Quaternion.identity);
+                    curvePath.GetComponent<CurvePath>().curveNodes.Add(nodeInstantiated);
+                    nodeInstantiated.transform.parent = curvePath.transform;
+                }
+                curvePath.GetComponent<LineRenderer>().positionCount = bezier.GetComponent<Bezier>().numOfPoints;
+                curvePath.GetComponent<LineRenderer>().SetPositions(bezier.GetComponent<Bezier>().positions);
+
+                Destroy(bezier);
+            }
+        }
     }
 
     private void VisualizeWrongConnections()

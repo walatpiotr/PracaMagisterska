@@ -23,6 +23,7 @@
         public enum NodeType
         {
             End,
+            Middle,
             Start,
             Generator
         }
