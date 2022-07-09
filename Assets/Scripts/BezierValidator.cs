@@ -79,6 +79,8 @@ public class BezierValidator : MonoBehaviour
                 curvePath.GetComponent<LineRenderer>().positionCount = bezier.GetComponent<Bezier>().numOfPoints;
                 curvePath.GetComponent<LineRenderer>().SetPositions(bezier.GetComponent<Bezier>().positions);
 
+                bezier.GetComponent<Bezier>().end.transform.parent.GetComponent<Path>().nextPath.Add(curvePath);
+                curvePath.GetComponent<CurvePath>().nextPath = bezier.GetComponent<Bezier>().start.transform.parent.gameObject;
                 Destroy(bezier);
             }
         }

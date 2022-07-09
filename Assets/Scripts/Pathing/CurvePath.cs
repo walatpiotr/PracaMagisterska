@@ -10,6 +10,8 @@ namespace Assets.Scripts.Pathing
 
         public string pathId;
 
+        public GameObject nextPath;
+
         public void Start()
         {
             pathId = Guid.NewGuid().ToString();
