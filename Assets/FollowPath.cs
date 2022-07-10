@@ -7,28 +7,49 @@ public class FollowPath : MonoBehaviour
 {
     public GameObject currentPath;
     public GameObject target;
-    public float speed = 1.5f;
+    public int nodeNumberInPath=0;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, gameObject.GetComponent<CarValueContainer>().velocity * Time.deltaTime);
         transform.up = target.transform.position - transform.position;
 
-        if (transform.position == target.transform.position && currentPath == null)
+        try
         {
-            currentPath = target.transform.parent.GetComponent<Path>().nextPath[0];
-            target = currentPath.GetComponent<CurvePath>().curveNodes[0];
+            if (transform.position == target.transform.position && currentPath.GetComponent<Path>().path.Count - 1 == nodeNumberInPath)
+            {
+                if (currentPath.GetComponent<Path>().nextPath.Count==0)
+                {
+                    Debug.Log("nowhere to go - see you on the other side");
+                    Destroy(gameObject);
+                }
+                var amountOfPossiblePaths = currentPath.GetComponent<Path>().nextPath.Count;
+                var randomPathChoose = Random.Range(0, amountOfPossiblePaths);
+                currentPath = currentPath.GetComponent<Path>().nextPath[randomPathChoose];
+                nodeNumberInPath = 0;
+                target = currentPath.GetComponent<Path>().path[nodeNumberInPath];
+            }
+            if (transform.position == target.transform.position && currentPath.GetComponent<Path>().path.Count - 1 != nodeNumberInPath)
+            {
+                nodeNumberInPath += 1;
+                target = currentPath.GetComponent<Path>().path[nodeNumberInPath];
+            }
         }
-        if(transform.position == target.transform.position && currentPath != null)
+        catch { }
+        try
         {
-            var index = currentPath.GetComponent<CurvePath>().curveNodes.IndexOf(target);
-            target = currentPath.GetComponent<CurvePath>().curveNodes[index+1];
+            if (transform.position == target.transform.position && currentPath.GetComponent<CurvePath>().curveNodes.Count - 1 == nodeNumberInPath)
+            {
+                currentPath = currentPath.GetComponent<CurvePath>().nextPath;
+                nodeNumberInPath = 0;
+                target = currentPath.GetComponent<Path>().path[nodeNumberInPath];
+            }
+            if (transform.position == target.transform.position && currentPath.GetComponent<CurvePath>().curveNodes.Count - 1 != nodeNumberInPath)
+            {
+                nodeNumberInPath += 1;
+                target = currentPath.GetComponent<CurvePath>().curveNodes[nodeNumberInPath];
+            }
         }
+        catch { }
     }
 }

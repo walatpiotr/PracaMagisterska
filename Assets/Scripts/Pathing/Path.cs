@@ -16,8 +16,8 @@ namespace Assets.Scripts.Pathing
 
         public void Start()
         {
-            path.Add(endNode);
             path.Add(startnode);
+            path.Add(endNode);
             pathId = Guid.NewGuid().ToString();
         }
     }
