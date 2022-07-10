@@ -260,7 +260,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100188074}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1098,7 +1098,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558337928}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1267,7 +1267,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624932430}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1690,7 +1690,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842299294}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1867,7 +1867,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892316508}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2067,7 +2067,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922835006}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2522,7 +2522,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072023400}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2950,6 +2950,83 @@ MonoBehaviour:
   nextPath:
   - {fileID: 100436100}
   pathId: 1b78c442-9372-4715-90fa-bcba186eb75e
+--- !u!1001 &1355521560
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 707954483040072894, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: isAccelerating
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810297009226386144, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 810297009226386144, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 810297009226386144, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 810297009226386144, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.6260879
+      objectReference: {fileID: 0}
+    - target: {fileID: 810297009226386144, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 810297009226386144, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810297009226386144, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810297009226386144, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810297009226386144, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810297009226386144, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810297009226386144, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810297009226386146, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: velocity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810297009226386147, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1910823281}
+    - target: {fileID: 810297009226386147, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: currentPath
+      value: 
+      objectReference: {fileID: 855904796}
+    - target: {fileID: 810297009226386158, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: m_Name
+      value: Car (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456262052562544043, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: isBreaking
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
 --- !u!1 &1356435565
 GameObject:
   m_ObjectHideFlags: 0
@@ -3042,7 +3119,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356435565}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -3214,7 +3291,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429028656}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -3414,7 +3491,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622834260}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -3945,7 +4022,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858238555}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -4145,7 +4222,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910823281}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -4570,6 +4647,10 @@ PrefabInstance:
       propertyPath: velocity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 810297009226386146, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: breakValue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 810297009226386147, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
       propertyPath: target
       value: 
@@ -4581,6 +4662,10 @@ PrefabInstance:
     - target: {fileID: 810297009226386158, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
       propertyPath: m_Name
       value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722818989021193628, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}

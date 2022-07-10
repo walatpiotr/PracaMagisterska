@@ -14,11 +14,18 @@ public class Breaking : MonoBehaviour
     {
         if (isBreaking && valueContainer.velocity > 0f)
         {
-            valueContainer.velocity -= valueContainer.breakValue;
+            valueContainer.velocity -= valueContainer.breakValue*Time.deltaTime;
             if (valueContainer.velocity < 0f)
             {
                 valueContainer.velocity = 0f;
             }
+        }
+
+        //Temp
+        if (valueContainer.carAhead)
+        {
+            isBreaking = true;
+            gameObject.GetComponent<Accelerating>().isAccelerating=false;
         }
     }
 }
