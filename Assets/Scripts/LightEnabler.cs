@@ -9,26 +9,17 @@ public class LightEnabler : MonoBehaviour
 
     void OnMouseDown()
     {
-
         var lightContainer = GameObject.FindGameObjectWithTag("lightContainerTemp");
         lightContainer.GetComponent<LightParametersContainer>().lightToPopulate = this.gameObject;
-
-        this.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-        /*if (lightInput == null)
-        {
-            Debug.Log("clicked");
-            lightInput = Instantiate(lightInputPrefab, transform.position, Quaternion.identity);
-            lightInput.transform.parent = GameObject.Find("Canvas").transform;
-            lightInput.GetComponent<LightParametersContainer>().lightToPopulate = this.gameObject;
-            lightInput.GetComponent<RectTransform>().sizeDelta = lightInputPrefab.GetComponent<RectTransform>().sizeDelta;
-            lightInput.GetComponent<RectTransform>().localScale = lightInputPrefab.GetComponent<RectTransform>().localScale;
-            lightInput.GetComponent<RectTransform>().anchoredPosition = Camera.main.WorldToScreenPoint(this.transform.position);
-        }*/
+        lightContainer.GetComponent<LightParametersContainer>().green.text = GetComponent<LightChangerTimer>().greenTime.ToString();
+        lightContainer.GetComponent<LightParametersContainer>().yellow.text = GetComponent<LightChangerTimer>().yellowTime.ToString();
+        lightContainer.GetComponent<LightParametersContainer>().red.text = GetComponent<LightChangerTimer>().redTime.ToString();
+        lightContainer.GetComponent<LightParametersContainer>().offset.text = GetComponent<LightChangerTimer>().offset.ToString();
+        this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
-    void OnExitButtonClick()
+    public void ChangeToValidColor()
     {
-        Destroy(lightInput);
-        lightInput = null;
+        this.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
     }
 }
