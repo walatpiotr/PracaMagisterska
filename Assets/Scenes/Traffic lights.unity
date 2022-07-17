@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 623101806}
   - component: {fileID: 623101805}
   - component: {fileID: 623101804}
+  - component: {fileID: 623101808}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -407,6 +408,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &623101808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623101803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d51660c2f8512419f6173b6c043a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightWithEvents: {fileID: 1770698337}
 --- !u!224 &980117949 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 778520344570460671, guid: c8d83603c08217845bb1549edc8182bb, type: 3}

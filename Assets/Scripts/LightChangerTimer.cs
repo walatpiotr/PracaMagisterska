@@ -1,9 +1,14 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LightChangerTimer : MonoBehaviour
 {
+    public event EventHandler<OnLightChangeEventArgs> OnLightChange;
+    public class OnLightChangeEventArgs : EventArgs
+    {
+        public State changeToState;
+    }
 
     public float offset=0f;
     public float greenTime=0f;
@@ -29,7 +34,6 @@ public class LightChangerTimer : MonoBehaviour
 
     public Dictionary<State, Sprite> states = new Dictionary<State, Sprite>();
 
-
     public State currentState = State.Init;
 
     public float timer;
@@ -46,6 +50,8 @@ public class LightChangerTimer : MonoBehaviour
         states.Add(State.YellowRed, yellowRedSprite);
         states.Add(State.Green, greenSprite);
         states.Add(State.Yellow, yellowSprite);
+
+
     }
 
     void Update()
@@ -60,31 +66,37 @@ public class LightChangerTimer : MonoBehaviour
                         timer = offset;
                         currentState = State.Offset;
                         ChangeSprite();
+                        OnLightChange?.Invoke(this, new OnLightChangeEventArgs { changeToState = currentState });
                         break;
                     case State.Offset:
                         timer = yellowTime;
                         currentState = State.YellowRed;
                         ChangeSprite();
+                        OnLightChange?.Invoke(this, new OnLightChangeEventArgs { changeToState = currentState });
                         break;
                     case State.YellowRed:
                         timer = greenTime;
                         currentState = State.Green;
                         ChangeSprite();
+                        OnLightChange?.Invoke(this, new OnLightChangeEventArgs { changeToState = currentState });
                         break;
                     case State.Green:
                         timer = yellowTime;
                         currentState = State.Yellow;
                         ChangeSprite();
+                        OnLightChange?.Invoke(this, new OnLightChangeEventArgs { changeToState = currentState });
                         break;
                     case State.Yellow:
                         timer = redTime;
                         currentState = State.Red;
                         ChangeSprite();
+                        OnLightChange?.Invoke(this, new OnLightChangeEventArgs { changeToState = currentState });
                         break;
                     case State.Red:
                         timer = yellowTime;
                         currentState = State.YellowRed;
                         ChangeSprite();
+                        OnLightChange?.Invoke(this, new OnLightChangeEventArgs { changeToState = currentState });
                         break;
                 }
             }
