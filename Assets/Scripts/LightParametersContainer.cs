@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using Assets.Scripts.Pathing;
 
 public class LightParametersContainer : MonoBehaviour
 {
@@ -27,14 +28,11 @@ public class LightParametersContainer : MonoBehaviour
 
     public void OnPasteButtonClick()
     {
-        if (Validate())
-        {
-            var container = lightCopyContainer.GetComponent<LightParametersCopyConatiner>();
-            green.text = container.green.ToString();
-            yellow.text = container.yellow.ToString();
-            red.text = container.red.ToString();
-            offset.text = container.offfset.ToString();
-        }
+        var container = lightCopyContainer.GetComponent<LightParametersCopyConatiner>();
+        green.text = container.green.ToString();
+        yellow.text = container.yellow.ToString();
+        red.text = container.red.ToString();
+        offset.text = container.offfset.ToString();
     }
 
     public void OnApplyButtonClick()
@@ -47,13 +45,25 @@ public class LightParametersContainer : MonoBehaviour
             lightToPopulate.GetComponent<LightChangerTimer>().redTime = float.Parse(red.text);
             lightToPopulate.GetComponent<LightChangerTimer>().offset = float.Parse(offset.text);
             lightToPopulate.GetComponent<LightEnabler>().ChangeToValidColor();
+            Debug.Log("applied");
         }
-        Debug.Log("applied");
     }
 
     public void OnApplyRoadButtonClick()
     {
-        // TODO
+        if (Validate())
+        {
+            var pathsInSameRoad = lightToPopulate.transform.parent.transform.parent.transform.parent.GetComponent<Road>().paths;
+            foreach (var path in pathsInSameRoad)
+            {
+                path.GetComponent<Path>().endNode.transform.GetChild(0).GetComponent<LightChangerTimer>().greenTime = float.Parse(green.text);
+                path.GetComponent<Path>().endNode.transform.GetChild(0).GetComponent<LightChangerTimer>().yellowTime = float.Parse(yellow.text);
+                path.GetComponent<Path>().endNode.transform.GetChild(0).GetComponent<LightChangerTimer>().redTime = float.Parse(red.text);
+                path.GetComponent<Path>().endNode.transform.GetChild(0).GetComponent<LightChangerTimer>().offset = float.Parse(offset.text);
+                path.GetComponent<Path>().endNode.transform.GetChild(0).GetComponent<LightEnabler>().ChangeToValidColor();
+                Debug.Log("applied to: "+ path);
+            }
+        }
     }
 
     private bool Validate()
@@ -74,7 +84,7 @@ public class LightParametersContainer : MonoBehaviour
 
             if (float.Parse(tmp.text) <= 0.0f)
             {
-                Debug.Log("must be more than 0");
+                Debug.Log("must be more than 0: " + float.Parse(tmp.text));
                 errors += 1;
             }
 

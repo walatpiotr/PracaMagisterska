@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2842458991956681054, guid: fe9c9ecf0cf63a94f8f4a8066ec61dd5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4108191771523750884, guid: fe9c9ecf0cf63a94f8f4a8066ec61dd5, type: 3}
       propertyPath: bezierPrefab
       value: 
@@ -67,6 +71,10 @@ PrefabInstance:
       propertyPath: bezierTriPrefab
       value: 
       objectReference: {fileID: 3286701523195168373, guid: c0ac4f38ad4eaa44a9213c8389a1ef45, type: 3}
+    - target: {fileID: 6496214111666834506, guid: fe9c9ecf0cf63a94f8f4a8066ec61dd5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7058627590138861730, guid: fe9c9ecf0cf63a94f8f4a8066ec61dd5, type: 3}
       propertyPath: type
       value: 1
