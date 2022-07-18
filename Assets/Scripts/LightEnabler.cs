@@ -20,6 +20,6 @@ public class LightEnabler : MonoBehaviour
 
     public void ChangeToValidColor()
     {
-        this.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        this.gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
     }
 }
