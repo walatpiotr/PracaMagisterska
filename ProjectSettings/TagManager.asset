@@ -11,6 +11,7 @@ TagManager:
   - panelRoads
   - bezierCurve
   - lightContainerTemp
+  - light
   layers:
   - Default
   - TransparentFX
