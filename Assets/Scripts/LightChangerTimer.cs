@@ -40,7 +40,7 @@ public class LightChangerTimer : MonoBehaviour
     
     void Start()
     {
-        if(offset==0f || greenTime == 0f || yellowTime == 0f || redTime == 0f)
+        if(greenTime == 0f || yellowTime == 0f || redTime == 0f)
         {
             isValid = false;
         }
@@ -50,8 +50,6 @@ public class LightChangerTimer : MonoBehaviour
         states.Add(State.YellowRed, yellowRedSprite);
         states.Add(State.Green, greenSprite);
         states.Add(State.Yellow, yellowSprite);
-
-
     }
 
     void Update()

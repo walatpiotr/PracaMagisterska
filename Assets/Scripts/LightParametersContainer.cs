@@ -87,7 +87,13 @@ public class LightParametersContainer : MonoBehaviour
                 errors += 1;
             }
 
-            if (float.Parse(tmp.text) <= 0.0f)
+            if (tmp == offset && float.Parse(tmp.text) < 0.0f)
+            {
+                Debug.Log("must be more than 0: " + float.Parse(tmp.text));
+                errors += 1;
+            }
+
+            if (tmp != offset && float.Parse(tmp.text) <= 0.0f)
             {
                 Debug.Log("must be more than 0: " + float.Parse(tmp.text));
                 errors += 1;
