@@ -12,7 +12,7 @@ namespace Assets.Scripts
         public GameObject middlePointPrefab;
         public GameObject instantiatedPrefab;
 
-        private int numOfPoints = 10;
+        public int numOfPoints = 10;
         public Vector3[] positions = new Vector3[10];
         public Color randomizedColor;
 
