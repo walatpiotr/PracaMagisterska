@@ -12,6 +12,11 @@ TagManager:
   - bezierCurve
   - lightContainerTemp
   - light
+  - simulationManager
+  - nodeEnd
+  - nodeStart
+  - canvaLights
+  - lightParametersKeeper
   layers:
   - Default
   - TransparentFX

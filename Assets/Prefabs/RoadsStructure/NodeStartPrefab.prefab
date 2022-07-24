@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NodeStartPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 2061720971419983953, guid: fe9c9ecf0cf63a94f8f4a8066ec61dd5, type: 3}
+      propertyPath: m_TagString
+      value: nodeStart
+      objectReference: {fileID: 0}
     - target: {fileID: 2441129312606396907, guid: fe9c9ecf0cf63a94f8f4a8066ec61dd5, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -62,6 +66,10 @@ PrefabInstance:
     - target: {fileID: 2842458991956681054, guid: fe9c9ecf0cf63a94f8f4a8066ec61dd5, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108191771523750884, guid: fe9c9ecf0cf63a94f8f4a8066ec61dd5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4108191771523750884, guid: fe9c9ecf0cf63a94f8f4a8066ec61dd5, type: 3}
       propertyPath: bezierPrefab

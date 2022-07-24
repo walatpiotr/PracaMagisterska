@@ -45,5 +45,15 @@
 
         public const float minSecondCarDelay = 9.99f; //placeholder
         public const float maxSecondCarDelay = 9.99f; //placeholder
+
+        // Simulation State
+        public enum SimulationState
+        {
+            RoadConfiguration,
+            LightConfiguration,
+            SimulationRunning,
+            SimulationStopped,
+            SimulationFinished
+        }
     }
 }

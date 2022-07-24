@@ -14,6 +14,11 @@ public class LightParametersContainer : MonoBehaviour
 
     public GameObject lightCopyContainer;
 
+    public void Start()
+    {
+        lightCopyContainer = GameObject.FindGameObjectWithTag("lightParametersKeeper");
+    }
+
     public void OnCopyButtonClick()
     {
         if (Validate())

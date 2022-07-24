@@ -4,6 +4,7 @@ using UnityEngine;
 using Assets.Scripts;
 using Assets.Scripts.Pathing;
 using System;
+using Assets.CSharpClasses;
 
 public class BezierValidator : MonoBehaviour
 {
@@ -82,6 +83,7 @@ public class BezierValidator : MonoBehaviour
                 bezier.GetComponent<Bezier>().end.transform.parent.GetComponent<Path>().nextPath.Add(curvePath);
                 curvePath.GetComponent<CurvePath>().nextPath = bezier.GetComponent<Bezier>().start.transform.parent.gameObject;
                 Destroy(bezier);
+                SetupComponentsAfterChange();
             }
         }
     }
@@ -91,6 +93,48 @@ public class BezierValidator : MonoBehaviour
         foreach(GameObject bezier  in wrongBeziers)
         {
             bezier.GetComponent<Bezier>().instantiatedPrefab.GetComponent<CurvePointMove>().notValid = true;
+        }
+    }
+
+    private void SetupComponentsAfterChange()
+    {
+        // Components changes needed for lights configuration
+        GameObject.FindGameObjectWithTag("simulationManager").GetComponent<SimulationState>().simulationState = Constans.SimulationState.LightConfiguration;
+
+        var endNodes = GameObject.FindGameObjectsWithTag("nodeEnd");
+        var startNodes = GameObject.FindGameObjectsWithTag("nodeStart");
+        foreach (var node in endNodes)
+        {
+            node.GetComponent<BoxCollider2D>().enabled = false;
+            node.GetComponent<SpriteRenderer>().enabled = false;
+
+            if (node.transform.parent.GetComponent<Path>().nextPath.Count != 0)
+            {
+                node.transform.GetChild(0).gameObject.SetActive(true);
+            }
+        }
+        foreach (var node in startNodes)
+        {
+            node.GetComponent<BoxCollider2D>().enabled = false;
+            node.GetComponent<SpriteRenderer>().enabled = false;
+        }
+        var roads = GameObject.FindGameObjectsWithTag("road");
+        foreach (var road in roads)
+        {
+            road.GetComponent<BoxCollider2D>().enabled = false;
+            road.GetComponent<EditPostion>().enabled = false;
+        }
+
+        var canvaRoadsChildrenCount = GameObject.FindGameObjectWithTag("canvaRoads").gameObject.transform.childCount;
+        for (int i=0; i<canvaRoadsChildrenCount; i++)
+        {
+            GameObject.FindGameObjectWithTag("canvaRoads").gameObject.transform.GetChild(i).gameObject.SetActive(false);
+        }
+
+        var canvaLightsChildrenCount = GameObject.FindGameObjectWithTag("canvaLights").gameObject.transform.childCount;
+        for (int i = 0; i < canvaLightsChildrenCount; i++)
+        {
+            GameObject.FindGameObjectWithTag("canvaLights").gameObject.transform.GetChild(i).gameObject.SetActive(true);
         }
     }
 }
