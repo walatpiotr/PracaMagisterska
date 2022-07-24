@@ -5,7 +5,7 @@ using UnityEngine;
 public class LightObserver : MonoBehaviour
 {
     public GameObject lightWithEvents;
-    // Start is called before the first frame update
+
     void Start()
     {
         LightChangerTimer events = lightWithEvents.GetComponent<LightChangerTimer>();
@@ -14,7 +14,28 @@ public class LightObserver : MonoBehaviour
 
     private void Events_OnLightChange(object sender, LightChangerTimer.OnLightChangeEventArgs e)
     {
-        Debug.Log("Zmiana: " + e.changeToState.ToString());
-        
+        if (e.changeToState.ToString() == LightChangerTimer.State.Green.ToString())
+        {
+            Debug.Log("czas ruszaæ");
+            // TODO - logic to other component
+        }
+
+        if (e.changeToState.ToString() == LightChangerTimer.State.Yellow.ToString())
+        {
+            Debug.Log("czas zwalniaæ");
+            // TODO - logic to other component
+        }
+
+        if (e.changeToState.ToString() == LightChangerTimer.State.Red.ToString())
+        {
+            Debug.Log("nie ruszaj siê");
+            // TODO - logic to other component
+        }
+
+        if (e.changeToState.ToString() == LightChangerTimer.State.YellowRed.ToString())
+        {
+            Debug.Log("nadal nie ruszaj siê");
+            // TODO - logic to other component
+        }
     }
 }

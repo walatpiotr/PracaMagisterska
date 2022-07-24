@@ -4807,6 +4807,10 @@ PrefabInstance:
       propertyPath: isBreaking
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7102086784952715105, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: lightWithEvents
+      value: 
+      objectReference: {fileID: 1402948067}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
 --- !u!1 &1402948067
@@ -7421,5 +7425,9 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7102086784952715105, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
+      propertyPath: lightWithEvents
+      value: 
+      objectReference: {fileID: 1402948067}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
