@@ -35,7 +35,7 @@ namespace Assets.Scripts
             }
             if (GetComponent<CarValueContainer>().carAhead.GetComponent<CarValueContainer>().velocity == GetComponent<CarValueContainer>().velocity)
             {
-                KeepVelocity();
+                KeepVelocity(1f);
             }
             if (GetComponent<CarValueContainer>().carAhead.GetComponent<CarValueContainer>().velocity == GetComponent<CarValueContainer>().velocity)
             {
@@ -58,8 +58,12 @@ namespace Assets.Scripts
         }
 
         // Method responsible for keeping speed
-        public void KeepVelocity()
+        public void KeepVelocity(float velocity)
         {
+            if (velocity == 0.0f)
+            {
+                GetComponent<CarValueContainer>().velocity = 0.0f;
+            }
             GetComponent<Accelerating>().isAccelerating = false;
             GetComponent<Breaking>().isBreaking = false;
         }

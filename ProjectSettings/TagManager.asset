@@ -17,6 +17,7 @@ TagManager:
   - nodeStart
   - canvaLights
   - lightParametersKeeper
+  - delayGenerator
   layers:
   - Default
   - TransparentFX

@@ -44,9 +44,15 @@ public class Detection : MonoBehaviour
 
             //TODO - calculate propervalue
             detectionLength = ((valueContainer.velocity) * (valueContainer.velocity)) / (2f * valueContainer.breakValue) + valueContainer.safeDistance;
-            //Debug.Log(detectionLength);
+            Debug.Log(detectionLength);
 
-            hit = Physics2D.Raycast(updatedStart, updatedDirection, detectionLength);
+            Vector2 directionTemp = Vector3.Normalize(updatedDirection - updatedStart);
+            Vector2 offset = updatedStart + directionTemp * detectionLength;
+
+            Debug.DrawLine(updatedStart, offset, Color.yellow);
+
+
+            hit = Physics2D.Raycast(updatedStart, directionTemp, detectionLength);
             //Debug.DrawLine(updatedStart, updatedDirection);
             if (hit.collider != null)
             {
@@ -57,9 +63,10 @@ public class Detection : MonoBehaviour
                 }
                 else
                 {
+                    //Debug.DrawLine(updatedStart, updatedDirection, Color.yellow);
                     //Debug.Log(detectionLength);
                     //Debug.Log("detekcja:" + identifier + " : " + hit.collider.gameObject.GetInstanceID());
-                    //Debug.DrawLine(updatedStart, hit.point);
+                    Debug.DrawLine(updatedStart, hit.point);
                     valueContainer.carAhead = hit.transform.gameObject;
                     OnCarDetection?.Invoke(this, new OnCarDetectionEventArgs { carAheadEventArg = hit.transform.gameObject });
                 }

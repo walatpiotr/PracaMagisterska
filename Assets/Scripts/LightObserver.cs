@@ -1,3 +1,4 @@
+using Assets.CSharpClasses;
 using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,11 +22,8 @@ public class LightObserver : MonoBehaviour
     {
         if (e.changeToState.ToString() == LightChangerTimer.State.Green.ToString())
         {
-            //Debug.Log("czas ruszaæ: "+GetComponent<Detection>().identifier);
-            GetComponent<CarBehaviourBase>().NoDetectionSub();
-            GetComponent<CarValueContainer>().carAhead = null;
-            GetComponent<CarBehaviourBase>().Accelerate();
-            GetComponent<Detection>().isDetectionOn = false;
+            Debug.Log("czas ruszaæ: "+GetComponent<Detection>().identifier);
+            WaitIfNeededAndStart();
         }
 
         if (e.changeToState.ToString() == LightChangerTimer.State.Yellow.ToString())
@@ -40,7 +38,10 @@ public class LightObserver : MonoBehaviour
 
         if (e.changeToState.ToString() == LightChangerTimer.State.YellowRed.ToString())
         {
-            //Debug.Log("nadal nie ruszaj siê");
+
+            var tuple = GameObject.FindGameObjectWithTag("delayGenerator").GetComponent<DelayNumbersGenerator>().GenerateDelayTimes();
+            GetComponent<CarValueContainer>().firstCarOffset = tuple.Item1.Item1;
+            GetComponent<CarValueContainer>().secondCarOffset = tuple.Item2.Item1;
         }
     }
 
@@ -68,12 +69,37 @@ public class LightObserver : MonoBehaviour
         if (distanceToLight < valueContainer.safeDistance)
         {
             GetComponent<CarBehaviourBase>().NoDetectionUnSub();
-            GetComponent<CarBehaviourBase>().Break();
+            GetComponent<CarBehaviourBase>().KeepVelocity(0f);
         }
     }
 
     private void OnDestroy()
     {
         events.OnLightChange -= Events_OnLightChange;
+    }
+
+    private void WaitIfNeededAndStart()
+    {
+        float offset;
+        if (valueContainer.carAhead)
+        {
+            offset = valueContainer.carAhead.GetComponent<CarValueContainer>().firstCarOffset + valueContainer.carAhead.GetComponent<CarValueContainer>().secondCarOffset;
+        }
+        else
+        {
+            offset = valueContainer.firstCarOffset;
+        }
+        StartCoroutine(WaitOffset(offset));
+    }
+
+    private IEnumerator WaitOffset(float offset)
+    {
+        yield return new WaitForSeconds(offset);
+
+        Debug.Log("waited");
+        GetComponent<CarBehaviourBase>().NoDetectionSub();
+        GetComponent<CarValueContainer>().carAhead = null;
+        GetComponent<CarBehaviourBase>().Accelerate();
+        GetComponent<Detection>().isDetectionOn = false;
     }
 }

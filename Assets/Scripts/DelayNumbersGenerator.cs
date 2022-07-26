@@ -1,9 +1,10 @@
 ﻿using System;
+using UnityEngine;
 using static Assets.CSharpClasses.Constans;
 
 namespace Assets.CSharpClasses
 {
-    public class DelayNumbersGenerator
+    public class DelayNumbersGenerator : MonoBehaviour
     {
         float firstTreshold = ffchance;
         float secondTreshold = ffchance + fschance;
