@@ -20,12 +20,5 @@ public class Breaking : MonoBehaviour
                 valueContainer.velocity = 0f;
             }
         }
-
-        //Temp
-        if (valueContainer.carAhead)
-        {
-            isBreaking = true;
-            gameObject.GetComponent<Accelerating>().isAccelerating=false;
-        }
     }
 }

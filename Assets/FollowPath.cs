@@ -20,7 +20,7 @@ public class FollowPath : MonoBehaviour
             {
                 if (currentPath.GetComponent<Path>().nextPath.Count==0)
                 {
-                    Debug.Log("nowhere to go - see you on the other side");
+                    //Debug.Log("nowhere to go - see you on the other side");
                     Destroy(gameObject);
                 }
                 var amountOfPossiblePaths = currentPath.GetComponent<Path>().nextPath.Count;

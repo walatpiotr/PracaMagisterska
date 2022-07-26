@@ -8,5 +8,6 @@ public class CarValueContainer : MonoBehaviour
     public float velocity;
     public float acceleration;
     public float breakValue;
+    public float safeDistance;
     public GameObject carAhead;
 }
