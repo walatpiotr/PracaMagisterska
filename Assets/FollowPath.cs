@@ -18,7 +18,7 @@ public class FollowPath : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, gameObject.GetComponent<CarValueContainer>().velocity * Time.deltaTime);
         transform.up = target.transform.position - transform.position;
         
-        if(Vector2.Distance(transform.position, target.transform.position)<0.05f)
+        if(Vector2.Distance(transform.position, target.transform.position)<0.1f)
         {
             if(nodeNumberInPath < wholePath.Count - 1)
             {

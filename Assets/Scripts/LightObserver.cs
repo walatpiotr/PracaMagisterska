@@ -74,7 +74,7 @@ public class LightObserver : MonoBehaviour
 
         var distanceToLight = Vector2.Distance(updatedStart, lightWithEvents.transform.position);
 
-        if (valueContainer.carAhead == null && currentLightState != LightChangerTimer.State.Green)
+        if (currentLightState != LightChangerTimer.State.Green)
         {
             CheckDistanceToLight(distanceToLight, detectionLength);
         }
@@ -121,6 +121,7 @@ public class LightObserver : MonoBehaviour
         {
             if (currentLightState == LightChangerTimer.State.Red)
             {
+                Debug.Log("zatrzymuje sie przy czerwonym");
                 GetComponent<CarBehaviourBase>().NoDetectionUnSub();
                 GetComponent<CarBehaviourBase>().KeepVelocity(0f);
             }

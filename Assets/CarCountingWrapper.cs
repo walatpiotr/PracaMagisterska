@@ -13,8 +13,9 @@ public class CarCountingWrapper : MonoBehaviour
     public void FixedUpdate()
     {
         timer += Time.deltaTime;
+        var timeToMinuteRatio = 60f/timer;
         simulationTime.text = timer.ToString("0.##");
         amountOfCars.text = carCounter.GetComponent<CarCountingScript>().amountOfCarsWhichCrossedTheRoad.ToString();
-        capacityByTime.text = (carCounter.GetComponent<CarCountingScript>().amountOfCarsWhichCrossedTheRoad / timer).ToString("0.##");
+        capacityByTime.text = (carCounter.GetComponent<CarCountingScript>().amountOfCarsWhichCrossedTheRoad * timeToMinuteRatio).ToString("0.##");
     }
 }
