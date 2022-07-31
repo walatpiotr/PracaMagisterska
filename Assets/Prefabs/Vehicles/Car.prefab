@@ -107,6 +107,7 @@ MonoBehaviour:
   currentPath: {fileID: 0}
   target: {fileID: 0}
   nodeNumberInPath: 0
+  wholePath: []
 --- !u!114 &810297009226386146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVelocity: 2
   velocity: 0
-  acceleration: 0.01
+  acceleration: 0.02
   breakValue: 1
   safeDistance: 0.2
   carAhead: {fileID: 0}
@@ -190,6 +191,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   updatedStart: {x: 0, y: 0}
   updatedDirection: {x: 0, y: 0}
+  offset: {x: 0, y: 0, z: 0}
   identifier: 
   isDetectionOn: 1
 --- !u!114 &7102086784952715105

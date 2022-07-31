@@ -7,12 +7,15 @@ using UnityEngine;
 public class LightObserver : MonoBehaviour
 {
     public CarValueContainer valueContainer;
-
+    public float minDistanceToLight=1000000f;
     public GameObject lightWithEvents;
     protected LightChangerTimer events;
 
+    public LightChangerTimer.State currentLightState;
+
     void Start()
     {
+        currentLightState = lightWithEvents.GetComponent<LightChangerTimer>().currentState;
         valueContainer = gameObject.GetComponent<CarValueContainer>();
         events = lightWithEvents.GetComponent<LightChangerTimer>();
         events.OnLightChange += Events_OnLightChange;
@@ -22,23 +25,42 @@ public class LightObserver : MonoBehaviour
     {
         if (e.changeToState.ToString() == LightChangerTimer.State.Green.ToString())
         {
-            Debug.Log("czas ruszaæ: "+GetComponent<Detection>().identifier);
-            WaitIfNeededAndStart();
+            currentLightState = lightWithEvents.GetComponent<LightChangerTimer>().currentState;
+            if (GetComponent<CarValueContainer>().velocity <= 0f)
+            {
+                WaitIfNeededAndStart();
+            }
         }
 
         if (e.changeToState.ToString() == LightChangerTimer.State.Yellow.ToString())
         {
-            //Debug.Log("czas zwalniaæ");
+            currentLightState = lightWithEvents.GetComponent<LightChangerTimer>().currentState;
         }
 
         if (e.changeToState.ToString() == LightChangerTimer.State.Red.ToString())
         {
-            //Debug.Log("nie ruszaj siê");
+            currentLightState = lightWithEvents.GetComponent<LightChangerTimer>().currentState;
+
+            var updatedStart = GetComponent<Detection>().startPoint + new Vector2(transform.position.x, transform.position.y);
+            var detectionLength = ((valueContainer.velocity) * (valueContainer.velocity)) / (2f * valueContainer.breakValue) + valueContainer.safeDistance;
+
+            var distanceToLight = Vector2.Distance(updatedStart, lightWithEvents.transform.position);
+
+            if (distanceToLight < detectionLength)
+            {
+                GetComponent<CarBehaviourBase>().NoDetectionUnSub();
+                GetComponent<CarBehaviourBase>().Break();
+            }
+            if (distanceToLight < valueContainer.safeDistance)
+            {
+                GetComponent<CarBehaviourBase>().NoDetectionUnSub();
+                GetComponent<CarBehaviourBase>().KeepVelocity(0f);
+            }
         }
 
         if (e.changeToState.ToString() == LightChangerTimer.State.YellowRed.ToString())
         {
-
+            currentLightState = lightWithEvents.GetComponent<LightChangerTimer>().currentState;
             var tuple = GameObject.FindGameObjectWithTag("delayGenerator").GetComponent<DelayNumbersGenerator>().GenerateDelayTimes();
             GetComponent<CarValueContainer>().firstCarOffset = tuple.Item1.Item1;
             GetComponent<CarValueContainer>().secondCarOffset = tuple.Item2.Item1;
@@ -47,29 +69,66 @@ public class LightObserver : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (valueContainer.carAhead == null && lightWithEvents.GetComponent<LightChangerTimer>().currentState != LightChangerTimer.State.Green)
-        {
-            CheckDistanceToLight();
-            Debug.Log("checking distance to light");
-        }
-    }
-
-    private void CheckDistanceToLight()
-    {
-        var updatedStart = GetComponent<Detection>().startPoint + new Vector2(transform.position.x, transform.position.y);
+        var updatedStart = GetComponent<Detection>().startObject.transform.position;
         var detectionLength = ((valueContainer.velocity) * (valueContainer.velocity)) / (2f * valueContainer.breakValue) + valueContainer.safeDistance;
 
         var distanceToLight = Vector2.Distance(updatedStart, lightWithEvents.transform.position);
 
+        if (valueContainer.carAhead == null && currentLightState != LightChangerTimer.State.Green)
+        {
+            CheckDistanceToLight(distanceToLight, detectionLength);
+        }
+        if (distanceToLight < 0.1f)
+        {
+            GetComponent<Detection>().isDetectionOn = false;
+        }
+        if (distanceToLight < minDistanceToLight)
+        {
+            minDistanceToLight = distanceToLight;
+        }
+        if( distanceToLight > minDistanceToLight)
+        {
+            events.OnLightChange -= Events_OnLightChange;
+            GetComponent<LightObserver>().enabled = false;
+        }
+    }
+
+    private void CheckDistanceToLight(float distanceToLight, float detectionLength)
+    {
         if (distanceToLight < detectionLength)
         {
-            GetComponent<CarBehaviourBase>().NoDetectionUnSub();
-            GetComponent<CarBehaviourBase>().Break();
+            if (currentLightState == LightChangerTimer.State.Red)
+            {
+                GetComponent<CarBehaviourBase>().NoDetectionUnSub();
+                GetComponent<CarBehaviourBase>().Break();
+            }
+            if (currentLightState == LightChangerTimer.State.Yellow)
+            {
+                if ((distanceToLight / valueContainer.velocity) >= lightWithEvents.GetComponent<LightChangerTimer>().timer)
+                {
+                    Debug.Log((distanceToLight / valueContainer.velocity));
+                    GetComponent<CarBehaviourBase>().NoDetectionUnSub();
+                    GetComponent<CarBehaviourBase>().Break();
+                }
+            }
+            if (currentLightState == LightChangerTimer.State.Offset)
+            {
+                GetComponent<CarBehaviourBase>().NoDetectionUnSub();
+                GetComponent<CarBehaviourBase>().Break();
+            }
         }
         if (distanceToLight < valueContainer.safeDistance)
         {
-            GetComponent<CarBehaviourBase>().NoDetectionUnSub();
-            GetComponent<CarBehaviourBase>().KeepVelocity(0f);
+            if (currentLightState == LightChangerTimer.State.Red)
+            {
+                GetComponent<CarBehaviourBase>().NoDetectionUnSub();
+                GetComponent<CarBehaviourBase>().KeepVelocity(0f);
+            }
+            if (currentLightState == LightChangerTimer.State.Offset)
+            {
+                GetComponent<CarBehaviourBase>().NoDetectionUnSub();
+                GetComponent<CarBehaviourBase>().KeepVelocity(0f);
+            }
         }
     }
 
@@ -96,10 +155,10 @@ public class LightObserver : MonoBehaviour
     {
         yield return new WaitForSeconds(offset);
 
-        Debug.Log("waited");
+        //Debug.Log("waited: "+ offset);
         GetComponent<CarBehaviourBase>().NoDetectionSub();
         GetComponent<CarValueContainer>().carAhead = null;
         GetComponent<CarBehaviourBase>().Accelerate();
-        GetComponent<Detection>().isDetectionOn = false;
+        //GetComponent<Detection>().isDetectionOn = false;
     }
 }

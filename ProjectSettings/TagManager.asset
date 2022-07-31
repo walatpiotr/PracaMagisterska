@@ -18,6 +18,7 @@ TagManager:
   - canvaLights
   - lightParametersKeeper
   - delayGenerator
+  - carCounter
   layers:
   - Default
   - TransparentFX

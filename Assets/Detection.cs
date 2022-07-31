@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +15,10 @@ public class Detection : MonoBehaviour
     public Vector2 direction;
     public Vector2 updatedStart;
     public Vector2 updatedDirection;
+    public Vector3 offset;
     public RaycastHit2D hit;
+
+
 
     public string identifier;
 
@@ -39,6 +43,10 @@ public class Detection : MonoBehaviour
 
     void FixedUpdate()
     {
+        startObject = transform.GetChild(0).gameObject;
+        directionObject = transform.GetChild(1).gameObject;
+        startPoint = startObject.transform.position - transform.position;
+        direction = directionObject.transform.position - transform.position;
         if (isDetectionOn) {
             updatedStart = startPoint + new Vector2(transform.position.x, transform.position.y);
             updatedDirection = direction + new Vector2(transform.position.x, transform.position.y);
@@ -46,12 +54,12 @@ public class Detection : MonoBehaviour
             //TODO - calculate propervalue
             detectionLength = ((valueContainer.velocity) * (valueContainer.velocity)) / (2f * valueContainer.breakValue) + valueContainer.safeDistance;
             calculatedDetectionLength = detectionLength;
-            Debug.Log(detectionLength);
+            //Debug.Log(detectionLength);
 
-            Vector2 directionTemp = Vector3.Normalize(updatedDirection - updatedStart);
-            Vector2 offset = updatedStart + directionTemp * detectionLength;
+            Vector3 directionTemp = Vector3.Normalize(updatedDirection - updatedStart);
+            offset = new Vector3(updatedStart.x, updatedStart.y, 0f) + (directionTemp * detectionLength);
 
-            Debug.DrawLine(updatedStart, offset, Color.yellow);
+            //Debug.DrawLine(updatedStart, offset, Color.yellow);
 
 
             hit = Physics2D.Raycast(updatedStart, directionTemp, detectionLength);
@@ -63,11 +71,12 @@ public class Detection : MonoBehaviour
                     valueContainer.carAhead = hit.transform.gameObject;
                     OnSafeDetection?.Invoke(this, null);
                 }
+                if( detectionLength < valueContainer.safeDistance)
+                {
+                    GetComponent<CarBehaviourBase>().KeepVelocity(0f);
+                }
                 else
                 {
-                    //Debug.DrawLine(updatedStart, updatedDirection, Color.yellow);
-                    //Debug.Log(detectionLength);
-                    //Debug.Log("detekcja:" + identifier + " : " + hit.collider.gameObject.GetInstanceID());
                     Debug.DrawLine(updatedStart, hit.point);
                     valueContainer.carAhead = hit.transform.gameObject;
                     OnCarDetection?.Invoke(this, new OnCarDetectionEventArgs { carAheadEventArg = hit.transform.gameObject });
