@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1722818989021193628}
   - component: {fileID: 3542966721313373396}
   - component: {fileID: 7102086784952715105}
+  - component: {fileID: 2096580556295828395}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 810297009226386158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.14, z: 1}
   m_Children:
   - {fileID: 3990968896634431973}
   - {fileID: 2560638491019899908}
@@ -106,6 +107,7 @@ MonoBehaviour:
   currentPath: {fileID: 0}
   target: {fileID: 0}
   nodeNumberInPath: 0
+  wholePath: []
 --- !u!114 &810297009226386146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,9 +122,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVelocity: 2
   velocity: 0
-  acceleration: 0.01
+  acceleration: 0.02
   breakValue: 1
+  safeDistance: 0.2
   carAhead: {fileID: 0}
+  firstCarOffset: 0
+  secondCarOffset: 0
 --- !u!114 &6456262052562544043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +168,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.00221769}
-  m_Size: {x: 2.3599997, y: 4.820217}
+  m_Size: {x: 2.3599997, y: 4.8}
   m_Direction: 0
 --- !u!114 &3542966721313373396
 MonoBehaviour:
@@ -177,14 +182,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2465ecd0430e0fd4ea62585f6e13ff9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionLength: 0
+  valueContainer: {fileID: 0}
+  detectionLength: 0.2
+  calculatedDetectionLength: 0.2
   startObject: {fileID: 4621377236731076438}
   directionObject: {fileID: 3900142906906762738}
   startPoint: {x: 0, y: 0}
   direction: {x: 0, y: 0}
   updatedStart: {x: 0, y: 0}
   updatedDirection: {x: 0, y: 0}
+  offset: {x: 0, y: 0, z: 0}
   identifier: 
+  isDetectionOn: 1
 --- !u!114 &7102086784952715105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +206,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d51660c2f8512419f6173b6c043a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  valueContainer: {fileID: 0}
   lightWithEvents: {fileID: 0}
+--- !u!114 &2096580556295828395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810297009226386158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b8436af30a0e2a45ac7016ffadbe20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3900142906906762738
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3900142906906762738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 500, z: 0}
+  m_LocalPosition: {x: 0, y: 100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 810297009226386144}
@@ -252,8 +274,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4621377236731076438}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalPosition: {x: 0, y: 2.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 810297009226386144}
   m_RootOrder: 0
