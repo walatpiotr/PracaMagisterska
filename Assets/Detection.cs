@@ -7,6 +7,7 @@ public class Detection : MonoBehaviour
 {
     public CarValueContainer valueContainer;
     public float detectionLength;
+    public float calculatedDetectionLength;
     public GameObject startObject;
     public GameObject directionObject;
     public Vector2 startPoint;
@@ -44,6 +45,7 @@ public class Detection : MonoBehaviour
 
             //TODO - calculate propervalue
             detectionLength = ((valueContainer.velocity) * (valueContainer.velocity)) / (2f * valueContainer.breakValue) + valueContainer.safeDistance;
+            calculatedDetectionLength = detectionLength;
             Debug.Log(detectionLength);
 
             Vector2 directionTemp = Vector3.Normalize(updatedDirection - updatedStart);
