@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class JsonParser : MonoBehaviour
 {
-    public TextMeshProUGUI input;
-
     public void LoadJson()
     {
         using (StreamReader r = new StreamReader("config/config.json"))

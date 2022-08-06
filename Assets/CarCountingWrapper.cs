@@ -10,6 +10,11 @@ public class CarCountingWrapper : MonoBehaviour
 
     public float timer = 0f;
 
+    public void Start()
+    {
+        carCounter = GameObject.FindGameObjectWithTag("carCounter");
+    }
+
     public void FixedUpdate()
     {
         timer += Time.deltaTime;
