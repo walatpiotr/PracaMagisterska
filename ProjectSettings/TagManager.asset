@@ -19,6 +19,7 @@ TagManager:
   - lightParametersKeeper
   - delayGenerator
   - carCounter
+  - configuration
   layers:
   - Default
   - TransparentFX

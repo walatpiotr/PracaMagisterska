@@ -33,7 +33,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810297009226386158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.178, y: -0.34, z: 0}
   m_LocalScale: {x: 0.15, y: 0.14, z: 1}
   m_Children:
   - {fileID: 3990968896634431973}
@@ -207,7 +207,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valueContainer: {fileID: 0}
+  minDistanceToLight: 1000000
   lightWithEvents: {fileID: 0}
+  currentLightState: 0
 --- !u!114 &2096580556295828395
 MonoBehaviour:
   m_ObjectHideFlags: 0
