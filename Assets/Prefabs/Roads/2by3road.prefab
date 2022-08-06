@@ -108,6 +108,18 @@ PrefabInstance:
       value: 2by3road
       objectReference: {fileID: 0}
     - target: {fileID: 2627435976500397232, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
+      propertyPath: m_Size.x
+      value: 3.4614868
+      objectReference: {fileID: 0}
+    - target: {fileID: 2627435976500397232, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0044398904
+      objectReference: {fileID: 0}
+    - target: {fileID: 2627435976500397232, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.00800848
+      objectReference: {fileID: 0}
+    - target: {fileID: 2627435976500397232, guid: ccc13962d50b1184fb5d4d3e7bd4dd79, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 3.5
       objectReference: {fileID: 0}
