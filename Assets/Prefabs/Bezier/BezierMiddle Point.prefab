@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2875066018852077094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -46,6 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   editMode: 0
+  randomizedColor: {r: 0, g: 0, b: 0, a: 0}
+  rGreyMultiplier: 0
+  gGreyMultiplier: 0
+  bGreyMultiplier: 0
+  notValid: 0
 --- !u!212 &3227844933523915612
 SpriteRenderer:
   m_ObjectHideFlags: 0

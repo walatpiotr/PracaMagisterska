@@ -105,7 +105,7 @@ public class BezierValidator : MonoBehaviour
         var startNodes = GameObject.FindGameObjectsWithTag("nodeStart");
         foreach (var node in endNodes)
         {
-            node.GetComponent<BoxCollider2D>().enabled = false;
+            node.GetComponent<CircleCollider2D>().enabled = false;
             node.GetComponent<SpriteRenderer>().enabled = false;
 
             if (node.transform.parent.GetComponent<Path>().nextPath.Count != 0)
@@ -115,7 +115,7 @@ public class BezierValidator : MonoBehaviour
         }
         foreach (var node in startNodes)
         {
-            node.GetComponent<BoxCollider2D>().enabled = false;
+            node.GetComponent<CircleCollider2D>().enabled = false;
             node.GetComponent<SpriteRenderer>().enabled = false;
         }
         var roads = GameObject.FindGameObjectsWithTag("road");

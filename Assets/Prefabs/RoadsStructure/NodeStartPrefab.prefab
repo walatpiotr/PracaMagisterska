@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2061720971419983953, guid: fe9c9ecf0cf63a94f8f4a8066ec61dd5, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 0}
     - target: {fileID: 2061720971419983953, guid: fe9c9ecf0cf63a94f8f4a8066ec61dd5, type: 3}
       propertyPath: m_Name
       value: NodeStartPrefab
@@ -99,5 +99,6 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.047181923
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4040220247651027619, guid: fe9c9ecf0cf63a94f8f4a8066ec61dd5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fe9c9ecf0cf63a94f8f4a8066ec61dd5, type: 3}

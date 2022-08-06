@@ -82,8 +82,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 1
-        value: 0.08595654
+        time: 0
+        value: 0.49942395
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -148,6 +148,7 @@ MonoBehaviour:
   point2: {x: 0, y: 0, z: 0}
   middlePointPrefab: {fileID: 2875066018852077094, guid: b4dfffabed47f0a4a9ae3d6132f191ca, type: 3}
   instantiatedPrefab: {fileID: 0}
+  numOfPoints: 10
   positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}

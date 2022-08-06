@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 2441129312606396907}
   - component: {fileID: 7058627590138861730}
   - component: {fileID: 4108191771523750884}
-  - component: {fileID: 4040220247651027619}
   - component: {fileID: 7686328214424596911}
   - component: {fileID: 3333004081094870175}
+  - component: {fileID: 3191306442323095728}
   m_Layer: 0
   m_Name: NodeEndPrefab
   m_TagString: nodeEnd
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -66,32 +66,6 @@ MonoBehaviour:
   bezierTriPrefab: {fileID: 3286701523195168373, guid: c0ac4f38ad4eaa44a9213c8389a1ef45, type: 3}
   instance: {fileID: 0}
   pointer: {x: 0, y: 0, z: 0}
---- !u!61 &4040220247651027619
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061720971419983953}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.000000014901161}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
-    newSize: {x: 0.2, y: 0.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.17370036, y: 0.17928347}
-  m_EdgeRadius: 0
 --- !u!212 &7686328214424596911
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -158,6 +132,22 @@ MonoBehaviour:
   lightInputPrefab: {fileID: 778520344570460670, guid: c8d83603c08217845bb1549edc8182bb, type: 3}
   lightContainerPrefab: {fileID: 2304913605500073946, guid: 5654c88e71c4b4442a9a76a41c56be4c, type: 3}
   lightInput: {fileID: 0}
+--- !u!58 &3191306442323095728
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061720971419983953}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.15
 --- !u!1001 &2735177402459555393
 PrefabInstance:
   m_ObjectHideFlags: 0
