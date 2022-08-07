@@ -110,8 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fc128f570a5004ba877b602d0a5406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehiclePrefab: {fileID: 0}
+  vehiclePrefab: {fileID: 810297009226386158, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
   carSpawnFrequency: 0
+  configuration: {fileID: 0}
   generate: 0
   overlapRadius: 0.7
   timer: 0
