@@ -1184,6 +1184,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 201700334}
     m_Modifications:
+    - target: {fileID: 8576991499760350937, guid: f72602a0f8f788c48b7aae7dfd5f8099, type: 3}
+      propertyPath: m_text
+      value: 'Objects:
+
+        move-''mouse drag''
+
+        rotate-''q,e''
+
+        remove-''delete
+        while dragging''
+
+        Camera:
+
+        move-''w,a,s,d''
+
+        rotate-''z,x''
+
+        zoom-''mouse
+        scroll'''
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576991499760350937, guid: f72602a0f8f788c48b7aae7dfd5f8099, type: 3}
+      propertyPath: m_fontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576991499760350937, guid: f72602a0f8f788c48b7aae7dfd5f8099, type: 3}
+      propertyPath: m_margin.w
+      value: -22.290924
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576991499760350937, guid: f72602a0f8f788c48b7aae7dfd5f8099, type: 3}
+      propertyPath: m_margin.x
+      value: -43.69034
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576991499760350937, guid: f72602a0f8f788c48b7aae7dfd5f8099, type: 3}
+      propertyPath: m_margin.y
+      value: -19.616058
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576991499760350937, guid: f72602a0f8f788c48b7aae7dfd5f8099, type: 3}
+      propertyPath: m_margin.z
+      value: -37.448837
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576991499760350937, guid: f72602a0f8f788c48b7aae7dfd5f8099, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 8576991500657072780, guid: f72602a0f8f788c48b7aae7dfd5f8099, type: 3}
       propertyPath: m_Pivot.x
       value: 0.4999999
@@ -2193,6 +2237,7 @@ GameObject:
   - component: {fileID: 1372228092}
   - component: {fileID: 1372228091}
   - component: {fileID: 1372228090}
+  - component: {fileID: 1372228093}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2265,6 +2310,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1372228093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372228089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1b842bcea0f094a8af0d230ab1619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1680517103 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 166128691095208800, guid: 33d375df7990c944e86ade082ee673b7, type: 3}

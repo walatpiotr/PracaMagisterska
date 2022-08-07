@@ -11,6 +11,8 @@ public class LightObserver : MonoBehaviour
     public GameObject lightWithEvents;
     protected LightChangerTimer events;
 
+    public bool isWaitingOffset = false;
+
     public LightChangerTimer.State currentLightState;
 
     void Start()
@@ -35,6 +37,13 @@ public class LightObserver : MonoBehaviour
             if (GetComponent<CarValueContainer>().velocity <= 0f)
             {
                 WaitIfNeededAndStart();
+            }
+            else
+            {
+                if (!isWaitingOffset)
+                {
+                    GetComponent<CarBehaviourBase>().Accelerate();
+                }
             }
         }
 
@@ -142,6 +151,7 @@ public class LightObserver : MonoBehaviour
 
     private void WaitIfNeededAndStart()
     {
+        isWaitingOffset = true;
         float offset;
         if (valueContainer.carAhead)
         {
@@ -162,6 +172,6 @@ public class LightObserver : MonoBehaviour
         GetComponent<CarBehaviourBase>().NoDetectionSub();
         GetComponent<CarValueContainer>().carAhead = null;
         GetComponent<CarBehaviourBase>().Accelerate();
-        //GetComponent<Detection>().isDetectionOn = false;
+        isWaitingOffset = false;
     }
 }
