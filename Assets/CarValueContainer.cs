@@ -13,4 +13,13 @@ public class CarValueContainer : MonoBehaviour
 
     public float firstCarOffset;
     public float secondCarOffset;
+
+    public void Start()
+    {
+        var configuration = GameObject.FindGameObjectWithTag("configuration").GetComponent<Configuration>();
+        maxVelocity = configuration.maxVelocity;
+        acceleration = configuration.acceleration;
+        breakValue = configuration.breaking;
+        safeDistance = configuration.safeDistance;
+    }
 }

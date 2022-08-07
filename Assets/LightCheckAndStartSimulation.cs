@@ -39,7 +39,7 @@ public class LightCheckAndStartSimulation : MonoBehaviour
             SetupGenerators();
             SetupCanvas();
             SetupSimulationManager();
-
+            LightBoxColliderDisable();
         }
     }
 
@@ -49,7 +49,10 @@ public class LightCheckAndStartSimulation : MonoBehaviour
         var ends = GameObject.FindGameObjectsWithTag("nodeEnd");
         foreach (var generator in generators)
         {
-            generator.GetComponent<CarGeneration>().Trigger();
+            if (generator.transform.parent.transform.GetChild(0).transform.GetChild(0).transform.gameObject.activeSelf)
+            {
+                generator.GetComponent<CarGeneration>().Trigger();
+            }
         }
     }
 
@@ -73,5 +76,14 @@ public class LightCheckAndStartSimulation : MonoBehaviour
         // Components changes needed for lights configuration
         GameObject.FindGameObjectWithTag("simulationManager").GetComponent<SimulationState>().simulationState = Constans.SimulationState.SimulationRunning;
         GameObject.FindGameObjectWithTag("simulationManager").GetComponent<CarCountingWrapper>().timer = 0f;
+    }
+
+    public void LightBoxColliderDisable()
+    {
+        var lights = GameObject.FindGameObjectsWithTag("light");
+        foreach (var light in lights)
+        {
+            light.GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 }
