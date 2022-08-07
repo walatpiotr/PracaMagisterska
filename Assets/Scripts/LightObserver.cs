@@ -26,6 +26,12 @@ public class LightObserver : MonoBehaviour
         if (e.changeToState.ToString() == LightChangerTimer.State.Green.ToString())
         {
             currentLightState = lightWithEvents.GetComponent<LightChangerTimer>().currentState;
+
+            currentLightState = lightWithEvents.GetComponent<LightChangerTimer>().currentState;
+            var tuple = GameObject.FindGameObjectWithTag("delayGenerator").GetComponent<DelayNumbersGenerator>().GenerateDelayTimes();
+            GetComponent<CarValueContainer>().firstCarOffset = tuple.Item1.Item1;
+            GetComponent<CarValueContainer>().secondCarOffset = tuple.Item2.Item1;
+
             if (GetComponent<CarValueContainer>().velocity <= 0f)
             {
                 WaitIfNeededAndStart();
@@ -60,10 +66,6 @@ public class LightObserver : MonoBehaviour
 
         if (e.changeToState.ToString() == LightChangerTimer.State.YellowRed.ToString())
         {
-            currentLightState = lightWithEvents.GetComponent<LightChangerTimer>().currentState;
-            var tuple = GameObject.FindGameObjectWithTag("delayGenerator").GetComponent<DelayNumbersGenerator>().GenerateDelayTimes();
-            GetComponent<CarValueContainer>().firstCarOffset = tuple.Item1.Item1;
-            GetComponent<CarValueContainer>().secondCarOffset = tuple.Item2.Item1;
         }
     }
 
@@ -117,7 +119,7 @@ public class LightObserver : MonoBehaviour
                 GetComponent<CarBehaviourBase>().Break();
             }
         }
-        if (distanceToLight < valueContainer.safeDistance)
+        if (distanceToLight < 0.5f)
         {
             if (currentLightState == LightChangerTimer.State.Red)
             {
@@ -143,7 +145,7 @@ public class LightObserver : MonoBehaviour
         float offset;
         if (valueContainer.carAhead)
         {
-            offset = valueContainer.carAhead.GetComponent<CarValueContainer>().firstCarOffset + valueContainer.carAhead.GetComponent<CarValueContainer>().secondCarOffset;
+            offset = valueContainer.carAhead.GetComponent<CarValueContainer>().secondCarOffset;
         }
         else
         {
@@ -156,7 +158,7 @@ public class LightObserver : MonoBehaviour
     {
         yield return new WaitForSeconds(offset);
 
-        //Debug.Log("waited: "+ offset);
+        Debug.Log("waited: "+ offset);
         GetComponent<CarBehaviourBase>().NoDetectionSub();
         GetComponent<CarValueContainer>().carAhead = null;
         GetComponent<CarBehaviourBase>().Accelerate();

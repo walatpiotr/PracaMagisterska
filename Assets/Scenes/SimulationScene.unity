@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &146019495 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4025610818278128722, guid: 5c0f74ddc5b8a6b4eaeda5fa36d789f4, type: 3}
+  m_PrefabInstance: {fileID: 307684103}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307684104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e36df5b5a910737429a930497ad25349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &201700330
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,6 +335,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -244.70929
       objectReference: {fileID: 0}
+    - target: {fileID: 3387654461275098261, guid: 33d375df7990c944e86ade082ee673b7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 307684105}
+    - target: {fileID: 3387654461275098261, guid: 33d375df7990c944e86ade082ee673b7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SimulationReseting
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387654461275098261, guid: 33d375df7990c944e86ade082ee673b7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SimulationReset, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387654461275098261, guid: 33d375df7990c944e86ade082ee673b7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3655920475122851516, guid: 33d375df7990c944e86ade082ee673b7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -435,6 +462,14 @@ PrefabInstance:
     - target: {fileID: 4439559398753341500, guid: 33d375df7990c944e86ade082ee673b7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -30.1383
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931557909474168399, guid: 33d375df7990c944e86ade082ee673b7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 146019495}
+    - target: {fileID: 4931557909474168399, guid: 33d375df7990c944e86ade082ee673b7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeSimulationPaused
       objectReference: {fileID: 0}
     - target: {fileID: 5737803116278181268, guid: 33d375df7990c944e86ade082ee673b7, type: 3}
       propertyPath: m_UiScaleMode
@@ -763,6 +798,23 @@ PrefabInstance:
       objectReference: {fileID: 1680517103}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c0f74ddc5b8a6b4eaeda5fa36d789f4, type: 3}
+--- !u!1 &307684104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2762211955904666382, guid: 5c0f74ddc5b8a6b4eaeda5fa36d789f4, type: 3}
+  m_PrefabInstance: {fileID: 307684103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &307684105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307684104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b09cea0bd521a4d9213f0d9fea7a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &308504395
 GameObject:
   m_ObjectHideFlags: 0

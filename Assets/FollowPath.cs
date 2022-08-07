@@ -1,6 +1,5 @@
 using Assets.Scripts;
 using Assets.Scripts.Pathing;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,6 +31,7 @@ public class FollowPath : MonoBehaviour
             }
             else
             {
+                GameObject.FindGameObjectWithTag("carCounter").GetComponent<CarCountingScript>().IncreaseCarCount();
                 Destroy(this.gameObject);
             }
         }

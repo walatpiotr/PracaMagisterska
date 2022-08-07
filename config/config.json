@@ -1,6 +1,6 @@
 {
-	acceleration: 1,
-    breaking: 1,
+	acceleration: 3,
+    breaking: 3,
     ffchance: 0.3,
     fschance: 0.4,
     sschance: 0.5,
@@ -9,7 +9,7 @@
     maxFirstCarDelay: 0.8,
     minSecondCarDelay: 0.9,
     maxSecondCarDelay: 1.0,
-    safeDistance: 1,
-    maxVelocity: 2,
+    safeDistance: 5,
+    maxVelocity: 15,
     generatorDistance: 1
 }

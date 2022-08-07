@@ -12,8 +12,6 @@ public class CarGeneration : MonoBehaviour
 
     public bool generate;
 
-    public float overlapRadius;
-
     public float timer;
 
     void FixedUpdate()
@@ -32,7 +30,7 @@ public class CarGeneration : MonoBehaviour
     private void TryToSpawn()
     {
         Vector3 spawnPoint = this.transform.position;
-        var hitCollider = Physics2D.OverlapCircle(spawnPoint, overlapRadius);
+        var hitCollider = Physics2D.OverlapCircle(spawnPoint, 3f);
         if (hitCollider)
         {
             //Debug.Log("Mam auto przy generatorze: " + hitCollider);

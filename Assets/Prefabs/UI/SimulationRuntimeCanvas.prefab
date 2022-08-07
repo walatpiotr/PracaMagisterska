@@ -347,6 +347,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameObject
       objectReference: {fileID: 0}
+    - target: {fileID: 2861192579544710672, guid: 2b47f7a63620fb14cb225cc059d62201, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861192579544710672, guid: 2b47f7a63620fb14cb225cc059d62201, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861192579544710672, guid: 2b47f7a63620fb14cb225cc059d62201, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861192579544710672, guid: 2b47f7a63620fb14cb225cc059d62201, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861192579544710672, guid: 2b47f7a63620fb14cb225cc059d62201, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3064800958610520843, guid: 2b47f7a63620fb14cb225cc059d62201, type: 3}
       propertyPath: m_text
       value: 'Cars passed:'
@@ -463,6 +483,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5861400670260192933, guid: 2b47f7a63620fb14cb225cc059d62201, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6190611989817642432, guid: 2b47f7a63620fb14cb225cc059d62201, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -532,6 +556,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6793652059163396344, guid: 2b47f7a63620fb14cb225cc059d62201, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196928382551986250, guid: 2b47f7a63620fb14cb225cc059d62201, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196928382551986250, guid: 2b47f7a63620fb14cb225cc059d62201, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196928382551986250, guid: 2b47f7a63620fb14cb225cc059d62201, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196928382551986250, guid: 2b47f7a63620fb14cb225cc059d62201, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}

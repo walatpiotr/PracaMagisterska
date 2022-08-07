@@ -74,7 +74,6 @@ namespace Assets.Scripts
             events.OnCarDetection -= Events_OnCarDetection;
             events.OnNoDetection -= Events_OnNoDetection;
             events.OnSafeDetection -= Events_OnCarInSafeDistanceDetection;
-            GameObject.FindGameObjectWithTag("carCounter").GetComponent<CarCountingScript>().IncreaseCarCount();
         }
 
         public void NoDetectionUnSub()
