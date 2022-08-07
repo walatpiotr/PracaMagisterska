@@ -10,6 +10,8 @@ public class CarCountingWrapper : MonoBehaviour
 
     public float timer = 0f;
 
+    private int seconds;
+
     public void Start()
     {
         carCounter = GameObject.FindGameObjectWithTag("carCounter");
@@ -19,7 +21,9 @@ public class CarCountingWrapper : MonoBehaviour
     {
         timer += Time.deltaTime;
         var timeToMinuteRatio = 60f/timer;
-        simulationTime.text = timer.ToString("0.##");
+        int seconds = (int)timer;
+        var resultTime = string.Format("{0:00}:{1:00}", seconds / 60, seconds);
+        simulationTime.text = resultTime;
         amountOfCars.text = carCounter.GetComponent<CarCountingScript>().amountOfCarsWhichCrossedTheRoad.ToString();
         capacityByTime.text = (carCounter.GetComponent<CarCountingScript>().amountOfCarsWhichCrossedTheRoad * timeToMinuteRatio).ToString("0.##");
     }

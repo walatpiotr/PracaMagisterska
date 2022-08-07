@@ -8,6 +8,8 @@ public class CarGeneration : MonoBehaviour
     public GameObject vehiclePrefab;
     public float carSpawnFrequency;
 
+    public GameObject configuration;
+
     public bool generate;
 
     public float overlapRadius;
@@ -48,11 +50,18 @@ public class CarGeneration : MonoBehaviour
         carInstantiated.GetComponent<FollowPath>().target = this.gameObject.transform.parent.gameObject.GetComponent<Path>().path[0];
         carInstantiated.GetComponent<LightObserver>().lightWithEvents = this.gameObject.transform.parent.GetChild(0).GetChild(0).gameObject;
         carInstantiated.GetComponent<FollowPath>().CalculatePredeterminedPath();
+
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         //Gizmos.DrawSphere(transform.position, overlapRadius);
+    }
+
+    public void Trigger()
+    {
+        generate = true;
+        configuration = GameObject.FindGameObjectWithTag("configuration");
     }
 }

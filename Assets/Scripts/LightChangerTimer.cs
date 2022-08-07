@@ -108,6 +108,5 @@ public class LightChangerTimer : MonoBehaviour
     public void ChangeSprite()
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = states[currentState];
-        //Debug.Log(states[currentState]);
     }
 }
