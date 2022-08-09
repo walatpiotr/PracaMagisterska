@@ -1171,7 +1171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75103441b678dd042a9466664aa82636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 50
+  offset: 0
   greenTime: 12
   yellowTime: 2
   redTime: 28
@@ -1181,7 +1181,7 @@ MonoBehaviour:
   yellowSprite: {fileID: 21300000, guid: 865dd8e0ebf60634d9c5697b2e8f5440, type: 3}
   isValid: 1
   currentState: 1
-  timer: 50
+  timer: 0
 --- !u!212 &131681175
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3141,8 +3141,8 @@ MonoBehaviour:
   greenSprite: {fileID: 21300000, guid: a774dfadeba2e0d43bde8b3493b7bf0a, type: 3}
   yellowSprite: {fileID: 21300000, guid: 865dd8e0ebf60634d9c5697b2e8f5440, type: 3}
   isValid: 1
-  currentState: 2
-  timer: 8.298761
+  currentState: 1
+  timer: 0
 --- !u!212 &355921774
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11027,7 +11027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vehiclePrefab: {fileID: 810297009226386158, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
-  carSpawnFrequency: 3
+  carSpawnFrequency: 0
   configuration: {fileID: 0}
   generate: 1
   timer: -0.02
@@ -11475,8 +11475,8 @@ MonoBehaviour:
   greenSprite: {fileID: 21300000, guid: a774dfadeba2e0d43bde8b3493b7bf0a, type: 3}
   yellowSprite: {fileID: 21300000, guid: 865dd8e0ebf60634d9c5697b2e8f5440, type: 3}
   isValid: 1
-  currentState: 2
-  timer: 22.297134
+  currentState: 1
+  timer: 14
 --- !u!212 &1076990606
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12987,9 +12987,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vehiclePrefab: {fileID: 810297009226386158, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
-  carSpawnFrequency: 3
+  carSpawnFrequency: 0
   configuration: {fileID: 0}
-  generate: 0
+  generate: 1
   timer: -0.02
 --- !u!212 &1195528532
 SpriteRenderer:
@@ -16647,9 +16647,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vehiclePrefab: {fileID: 810297009226386158, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
-  carSpawnFrequency: 3
+  carSpawnFrequency: 0
   configuration: {fileID: 0}
-  generate: 0
+  generate: 1
   timer: -0.02
 --- !u!212 &1694475782
 SpriteRenderer:
@@ -18881,8 +18881,8 @@ MonoBehaviour:
   greenSprite: {fileID: 21300000, guid: a774dfadeba2e0d43bde8b3493b7bf0a, type: 3}
   yellowSprite: {fileID: 21300000, guid: 865dd8e0ebf60634d9c5697b2e8f5440, type: 3}
   isValid: 1
-  currentState: 2
-  timer: 22.297134
+  currentState: 1
+  timer: 14
 --- !u!212 &1865060691
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18980,7 +18980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vehiclePrefab: {fileID: 810297009226386158, guid: 97daa71f06cec404a87c0aab98177d32, type: 3}
-  carSpawnFrequency: 3
+  carSpawnFrequency: 0
   configuration: {fileID: 0}
   generate: 1
   timer: -0.02
