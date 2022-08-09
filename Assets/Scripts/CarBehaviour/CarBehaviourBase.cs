@@ -44,7 +44,7 @@ namespace Assets.Scripts
             {
                 KeepVelocity(1f);
             }
-            if (GetComponent<CarValueContainer>().carAhead.GetComponent<CarValueContainer>().velocity > GetComponent<CarValueContainer>().velocity)
+            if (GetComponent<CarValueContainer>().carAhead.GetComponent<CarValueContainer>().velocity > GetComponent<CarValueContainer>().velocity && GetComponent<LightObserver>().offset<=0f)
             {
                 Accelerate();
             }

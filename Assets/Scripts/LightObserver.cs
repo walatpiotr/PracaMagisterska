@@ -13,6 +13,7 @@ public class LightObserver : MonoBehaviour
 
     public bool isWaitingOffset = false;
 
+    public float offset;
     public LightChangerTimer.State currentLightState;
 
     void Start()
@@ -102,6 +103,11 @@ public class LightObserver : MonoBehaviour
             events.OnLightChange -= Events_OnLightChange;
             GetComponent<LightObserver>().enabled = false;
         }
+
+        if (isWaitingOffset)
+        {
+            offset -= Time.deltaTime;
+        }
     }
 
     private void CheckDistanceToLight(float distanceToLight, float detectionLength)
@@ -152,7 +158,6 @@ public class LightObserver : MonoBehaviour
     private void WaitIfNeededAndStart()
     {
         isWaitingOffset = true;
-        float offset;
         if (valueContainer.carAhead)
         {
             offset = valueContainer.carAhead.GetComponent<CarValueContainer>().secondCarOffset;
