@@ -14,9 +14,12 @@ public class Accelerating : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isAccelerating && valueContainer.velocity<valueContainer.maxVelocity)
+        if (isAccelerating && (valueContainer.velocity<valueContainer.maxVelocity))
         {
-            valueContainer.velocity += valueContainer.acceleration;
+            valueContainer.velocity += valueContainer.acceleration*Time.deltaTime;
+        }
+        if (valueContainer.velocity > valueContainer.maxVelocity){
+            valueContainer.velocity = valueContainer.maxVelocity;
         }
     }
 }

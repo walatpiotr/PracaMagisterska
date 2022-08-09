@@ -19,7 +19,14 @@ namespace Assets.Scripts
 
         private void Events_OnCarDetection(object sender, Detection.OnCarDetectionEventArgs e)
         {
-            Break();
+            if (GetComponent<CarValueContainer>().carAhead.GetComponent<CarValueContainer>().velocity > GetComponent<CarValueContainer>().velocity && GetComponent<CarValueContainer>().carAhead.GetComponent<Accelerating>().isAccelerating == true)
+            {
+                Accelerate();
+            }
+            else
+            {
+                Break();
+            }
         }
 
         private void Events_OnNoDetection(object sender, EventArgs e)
@@ -37,7 +44,7 @@ namespace Assets.Scripts
             {
                 KeepVelocity(1f);
             }
-            if (GetComponent<CarValueContainer>().carAhead.GetComponent<CarValueContainer>().velocity == GetComponent<CarValueContainer>().velocity)
+            if (GetComponent<CarValueContainer>().carAhead.GetComponent<CarValueContainer>().velocity > GetComponent<CarValueContainer>().velocity)
             {
                 Accelerate();
             }

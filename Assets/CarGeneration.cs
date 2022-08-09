@@ -30,7 +30,7 @@ public class CarGeneration : MonoBehaviour
     private void TryToSpawn()
     {
         Vector3 spawnPoint = this.transform.position;
-        var hitCollider = Physics2D.OverlapCircle(spawnPoint, 3f);
+        var hitCollider = Physics2D.OverlapCircle(spawnPoint, 2.5f);
         if (hitCollider)
         {
             //Debug.Log("Mam auto przy generatorze: " + hitCollider);
@@ -45,7 +45,6 @@ public class CarGeneration : MonoBehaviour
     {
         var carInstantiated = Instantiate(vehiclePrefab, transform.position, Quaternion.identity);
         carInstantiated.GetComponent<FollowPath>().currentPath = this.gameObject.transform.parent.gameObject;
-        carInstantiated.GetComponent<FollowPath>().target = this.gameObject.transform.parent.gameObject.GetComponent<Path>().path[0];
         carInstantiated.GetComponent<LightObserver>().lightWithEvents = this.gameObject.transform.parent.GetChild(0).GetChild(0).gameObject;
         carInstantiated.GetComponent<FollowPath>().CalculatePredeterminedPath();
 

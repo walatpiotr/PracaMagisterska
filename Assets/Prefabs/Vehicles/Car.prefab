@@ -209,6 +209,7 @@ MonoBehaviour:
   valueContainer: {fileID: 0}
   minDistanceToLight: 1000000
   lightWithEvents: {fileID: 0}
+  isWaitingOffset: 0
   currentLightState: 0
 --- !u!114 &2096580556295828395
 MonoBehaviour:

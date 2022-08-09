@@ -66,19 +66,16 @@ public class Detection : MonoBehaviour
             //Debug.DrawLine(updatedStart, updatedDirection);
             if (hit.collider != null)
             {
+                valueContainer.carAhead = hit.transform.gameObject;
+                Debug.DrawLine(updatedStart, hit.point);
+                Debug.DrawLine(hit.point, hit.point, Color.green);
                 if (detectionLength <= valueContainer.safeDistance)
                 {
-                    valueContainer.carAhead = hit.transform.gameObject;
                     OnSafeDetection?.Invoke(this, null);
-                }
-                if( detectionLength < valueContainer.safeDistance)
-                {
-                    GetComponent<CarBehaviourBase>().KeepVelocity(0f);
+                    Debug.DrawLine(updatedStart, hit.point, Color.red);
                 }
                 else
                 {
-                    Debug.DrawLine(updatedStart, hit.point);
-                    valueContainer.carAhead = hit.transform.gameObject;
                     OnCarDetection?.Invoke(this, new OnCarDetectionEventArgs { carAheadEventArg = hit.transform.gameObject });
                 }
             }

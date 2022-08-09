@@ -1,6 +1,7 @@
 using Assets.Scripts;
 using Assets.Scripts.Pathing;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class FollowPath : MonoBehaviour
@@ -23,6 +24,9 @@ public class FollowPath : MonoBehaviour
             {
                 if (target.GetComponent<Node>().type == Assets.CSharpClasses.Constans.NodeType.Middle)
                 {
+                    gameObject.GetComponent<Detection>().enabled = false;
+                    gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+
                     GetComponent<CarBehaviourBase>().Accelerate();
                 }
                 nodeNumberInPath += 1;
@@ -54,6 +58,8 @@ public class FollowPath : MonoBehaviour
         {
             wholePath.Add(node);
         }
+        wholePath = wholePath.Distinct().ToList();
+        target = wholePath[0];
 
     }
 }
