@@ -12,13 +12,18 @@ public class FollowPath : MonoBehaviour
 
     public List<GameObject> wholePath;
 
+    public Quaternion rotationStable;
     private int middlePointsTargeted = 0;
     void FixedUpdate()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, gameObject.GetComponent<CarValueContainer>().velocity * Time.deltaTime);
         transform.up = target.transform.position - transform.position;
-        
-        if(Vector2.Distance(transform.position, target.transform.position)<0.1f)
+
+        if(transform.rotation.z == 0f)
+        {
+            transform.rotation = rotationStable;
+        }
+        if (Vector2.Distance(transform.position, target.transform.position)<0.1f)
         {
             if(nodeNumberInPath < wholePath.Count - 1)
             {
@@ -39,6 +44,7 @@ public class FollowPath : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+        rotationStable = transform.rotation;
     }
 
     public void CalculatePredeterminedPath()

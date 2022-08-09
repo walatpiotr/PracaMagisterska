@@ -31,7 +31,12 @@ namespace Assets.Scripts
 
         private void Events_OnNoDetection(object sender, EventArgs e)
         {
-            Accelerate();
+            GetComponent<CarValueContainer>().carAhead = null;
+
+            if (GetComponent<LightObserver>().offset <= 0f)
+            {
+                Accelerate();
+            }
         }
 
         private void Events_OnCarInSafeDistanceDetection(object sender, EventArgs e)

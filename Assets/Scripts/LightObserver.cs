@@ -30,13 +30,13 @@ public class LightObserver : MonoBehaviour
         {
             currentLightState = lightWithEvents.GetComponent<LightChangerTimer>().currentState;
 
-            currentLightState = lightWithEvents.GetComponent<LightChangerTimer>().currentState;
-            var tuple = GameObject.FindGameObjectWithTag("delayGenerator").GetComponent<DelayNumbersGenerator>().GenerateDelayTimes();
-            GetComponent<CarValueContainer>().firstCarOffset = tuple.Item1.Item1;
-            GetComponent<CarValueContainer>().secondCarOffset = tuple.Item2.Item1;
+            
 
-            if (GetComponent<CarValueContainer>().velocity <= 0f)
+            if (GetComponent<CarValueContainer>().velocity <= 0f && GetComponent<CarValueContainer>().carAhead == null)
             {
+                var tuple = GameObject.FindGameObjectWithTag("delayGenerator").GetComponent<DelayNumbersGenerator>().GenerateDelayTimes();
+                GetComponent<CarValueContainer>().firstCarOffset = tuple.Item1.Item1;
+                GetComponent<CarValueContainer>().secondCarOffset = tuple.Item2.Item1;
                 WaitIfNeededAndStart();
             }
             else
@@ -98,7 +98,7 @@ public class LightObserver : MonoBehaviour
         {
             minDistanceToLight = distanceToLight;
         }
-        if( distanceToLight > minDistanceToLight)
+        if( distanceToLight > minDistanceToLight && minDistanceToLight == 0f)
         {
             events.OnLightChange -= Events_OnLightChange;
             GetComponent<LightObserver>().enabled = false;
@@ -107,6 +107,11 @@ public class LightObserver : MonoBehaviour
         if (isWaitingOffset)
         {
             offset -= Time.deltaTime;
+        }
+
+        if (GetComponent<CarValueContainer>().carAhead?.GetComponent<LightObserver>().isWaitingOffset == true && isWaitingOffset == false && valueContainer.carAhead.GetComponent<CarValueContainer>().firstCarOffset != 0f)
+        {
+            WaitIfNeededAndStart();
         }
     }
 
