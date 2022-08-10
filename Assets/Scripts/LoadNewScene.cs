@@ -5,6 +5,9 @@ public class LoadNewScene : MonoBehaviour
 {
     public void LoadSimulationScene()
     {
-        SceneManager.LoadScene("SimulationScene");
+        if (GameObject.FindGameObjectWithTag("configuration").GetComponent<ConfigurationValidator>().ValidateConfig())
+        {
+            SceneManager.LoadScene("SimulationScene");
+        }
     }
 }
