@@ -25,6 +25,9 @@ public class ConfigurationValidator : MonoBehaviour
                      .Select(field => field.Name)
                      .ToList();
         Debug.Log(fieldNames);
+        if (conf.maxFirstCarDelay <= conf.minFirstCarDelay || conf.maxSecondCarDelay <= conf.minSecondCarDelay)
+            error += "max delay value must be greater than min delay value \n";
+
         int i = 0;
         foreach(var variable in fieldValues)
         {
