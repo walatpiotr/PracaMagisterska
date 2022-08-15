@@ -5,6 +5,7 @@ using Assets.Scripts;
 using Assets.Scripts.Pathing;
 using System;
 using Assets.CSharpClasses;
+using TMPro;
 
 public class BezierValidator : MonoBehaviour
 {
@@ -18,12 +19,14 @@ public class BezierValidator : MonoBehaviour
 
     public void Validate()
     {
+        GameObject.FindGameObjectWithTag("bezierError").GetComponent<TextMeshProUGUI>().text = "";
         roads = GameObject.FindGameObjectsWithTag("road").ToList();
         beziers = GameObject.FindGameObjectsWithTag("bezierCurve").ToList();
 
-        if (beziers.Count == 0 || roads.Count == 0)
+        if (beziers.Count <1 || roads.Count < 2)
         {
-            //TODO - throw error
+            GameObject.FindGameObjectWithTag("bezierError").GetComponent<TextMeshProUGUI>().text = "You need to create at least two \n"+
+                "roads connected by 1 connection";
         }
 
         tempBeziers = new List<Tuple<GameObject, GameObject>>();
@@ -94,6 +97,7 @@ public class BezierValidator : MonoBehaviour
         {
             bezier.GetComponent<Bezier>().instantiatedPrefab.GetComponent<CurvePointMove>().notValid = true;
         }
+        GameObject.FindGameObjectWithTag("bezierError").GetComponent<TextMeshProUGUI>().text += "Please fix your connections";
     }
 
     private void SetupComponentsAfterChange()

@@ -23,6 +23,7 @@ TagManager:
   - canvaSimulation
   - generator
   - car
+  - bezierError
   layers:
   - Default
   - TransparentFX
