@@ -22,7 +22,7 @@ public class CarCountingWrapper : MonoBehaviour
         timer += Time.deltaTime;
         var timeToMinuteRatio = 60f/timer;
         int seconds = (int)timer;
-        var resultTime = string.Format("{0:00}:{1:00}", seconds / 60, seconds);
+        var resultTime = string.Format("{0:00}:{1:00}", seconds / 60, seconds%60);
         simulationTime.text = resultTime;
         amountOfCars.text = carCounter.GetComponent<CarCountingScript>().amountOfCarsWhichCrossedTheRoad.ToString();
         capacityByTime.text = (carCounter.GetComponent<CarCountingScript>().amountOfCarsWhichCrossedTheRoad * timeToMinuteRatio).ToString("0.##");

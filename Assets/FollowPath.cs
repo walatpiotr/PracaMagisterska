@@ -21,7 +21,7 @@ public class FollowPath : MonoBehaviour
 
         if(transform.rotation.z == 0f)
         {
-            transform.rotation = rotationStable;
+        //    transform.rotation = rotationStable;
         }
         if (Vector2.Distance(transform.position, target.transform.position)<0.1f)
         {
