@@ -2343,14 +2343,14 @@ PrefabInstance:
     - target: {fileID: 4759264755455233316, guid: 5820c1e7e5b07764bb3f24dd02bd74c9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 6240205040147057420, guid: 7937b8b6777ecb54689ecedafb40be3b, type: 3}
+      objectReference: {fileID: 1073476266}
     - target: {fileID: 4759264755455233316, guid: 5820c1e7e5b07764bb3f24dd02bd74c9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadMainScene
+      value: Validate
       objectReference: {fileID: 0}
     - target: {fileID: 4759264755455233316, guid: 5820c1e7e5b07764bb3f24dd02bd74c9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LoadMainMenu, Assembly-CSharp
+      value: BezierValidator, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4759264755455233317, guid: 5820c1e7e5b07764bb3f24dd02bd74c9, type: 3}
       propertyPath: m_Pivot.x
@@ -2451,6 +2451,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4759264755455233317, guid: 5820c1e7e5b07764bb3f24dd02bd74c9, type: 3}
   m_PrefabInstance: {fileID: 1073476264}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1073476266 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6824385127020853159, guid: 5820c1e7e5b07764bb3f24dd02bd74c9, type: 3}
+  m_PrefabInstance: {fileID: 1073476264}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a6638b25a373946b2ce6f05fb89c4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1112843401
 GameObject:
   m_ObjectHideFlags: 0

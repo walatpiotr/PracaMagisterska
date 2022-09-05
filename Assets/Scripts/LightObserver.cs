@@ -86,19 +86,21 @@ public class LightObserver : MonoBehaviour
 
         var distanceToLight = Vector2.Distance(updatedStart, lightWithEvents.transform.position);
 
+        var distanceCarCenterToLight = Vector2.Distance(this.gameObject.transform.position, lightWithEvents.transform.position);
+
         if (currentLightState != LightChangerTimer.State.Green)
         {
             CheckDistanceToLight(distanceToLight, detectionLength);
         }
-        if (distanceToLight < 0.1f)
+        if (distanceToLight <= GetComponent<CarValueContainer>().safeDistance)
         {
             GetComponent<Detection>().isDetectionOn = false;
         }
-        if (distanceToLight < minDistanceToLight)
+        if (distanceCarCenterToLight < minDistanceToLight)
         {
-            minDistanceToLight = distanceToLight;
+            minDistanceToLight = distanceCarCenterToLight;
         }
-        if( distanceToLight > minDistanceToLight && minDistanceToLight == 0f)
+        if(distanceCarCenterToLight > minDistanceToLight && minDistanceToLight < 2.3f)
         {
             events.OnLightChange -= Events_OnLightChange;
             GetComponent<LightObserver>().enabled = false;

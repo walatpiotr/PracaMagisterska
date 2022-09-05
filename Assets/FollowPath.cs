@@ -17,11 +17,9 @@ public class FollowPath : MonoBehaviour
     void FixedUpdate()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, gameObject.GetComponent<CarValueContainer>().velocity * Time.deltaTime);
-        transform.up = target.transform.position - transform.position;
-
-        if(transform.rotation.z == 0f)
+        if (transform.position != target.transform.position)
         {
-        //    transform.rotation = rotationStable;
+            transform.up = target.transform.position - transform.position;
         }
         if (Vector2.Distance(transform.position, target.transform.position)<0.1f)
         {
