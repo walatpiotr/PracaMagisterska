@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,14 @@ public class LoadNewScene : MonoBehaviour
     {
         if (GameObject.FindGameObjectWithTag("configuration").GetComponent<ConfigurationValidator>().ValidateConfig())
         {
-            SceneManager.LoadScene("SimulationScene");
+            try
+            {
+                SceneManager.LoadScene("SimulationScene");
+            }
+            catch (Exception e)
+            {
+                GameObject.FindGameObjectWithTag("configuration").GetComponent<ConfigurationValidator>().errorMessage.text = "something went wrong:" + e.Message.ToString();
+            }
         }
     }
 }

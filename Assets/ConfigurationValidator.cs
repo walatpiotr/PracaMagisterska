@@ -8,8 +8,28 @@ public class ConfigurationValidator : MonoBehaviour
 {
     public TextMeshProUGUI errorMessage;
 
+    public GameObject textPrefab;
+
+
+    public void Start()
+    {
+        errorMessage = GameObject.FindGameObjectWithTag("main_menu_error_text").GetComponent<TextMeshProUGUI>();
+
+        if (!errorMessage)
+        {
+            Instantiate(textPrefab, GameObject.FindGameObjectWithTag("mainCanvas").transform);
+        }
+    }
+
     public bool ValidateConfig()
     {
+        errorMessage = GameObject.FindGameObjectWithTag("main_menu_error_text").GetComponent<TextMeshProUGUI>();
+
+        if (!errorMessage)
+        {
+            Instantiate(textPrefab, GameObject.FindGameObjectWithTag("mainCanvas").transform);
+        }
+
         var conf = GetComponent<Configuration>();
         string error = "";
         if ((conf.ffchance + conf.fschance + conf.sschance + conf.sfchance) != 100f)

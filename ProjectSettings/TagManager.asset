@@ -24,6 +24,8 @@ TagManager:
   - generator
   - car
   - bezierError
+  - main_menu_error_text
+  - mianCanvas
   layers:
   - Default
   - TransparentFX
